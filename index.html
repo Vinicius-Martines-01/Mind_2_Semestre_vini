@@ -10,36 +10,28 @@
     <script type="text/javascript" src="./scripts/image_scroll.js" defer></script>
     <script type="text/javascript" src="/scripts/login_app.js" defer></script>
     <script type="text/javascript" src="/scripts/utilites.js" defer></script>
-
+    <script type="text/javascript" src="/scripts/nav.js" defer></script>
 
     <title>Mind</title>
 
 </head>
-<body onload="local(), changeNav()">
+<body onload="local()">
     <header>
-    <nav class="nav-main">
-        <div class="grid-container-nav">
-            <div class="row nav-container-row grid-fluid">
-                <div class="col-md-2" style="display: flex; padding-bottom: 0.75em;"> 
-                    <a href="">
-                        <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <div class="cont-nav-center">
-                        <a class="nav-item nav-link" href="javascript:void(0)" onclick="scrollToPos()" > Planos</a>
-                        <a class="nav-item nav-link" href="/pages/artigos.html"> Artigos</a>
-                        <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
-                    </div>
-                </div>
-                <div class="col" style="display: flex; justify-content: flex-end;">  
-                    <div class="nav-right-buttons">
-
-                    </div>
-                </div>
-            </div>
+    <nav class="nav-main-grid">
+        <div class="cont-nav-left"> 
+            <a href="">
+                <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
+            </a>
         </div>
 
+        <div class="cont-nav-center">
+
+        </div>
+        <div class="cont-nav-right">  
+            <div class="nav-right-buttons">
+
+            </div>
+        </div>
     </nav>
     </header>
     
