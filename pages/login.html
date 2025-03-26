@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sobrenos.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_perfil.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.3-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/login_app.js" defer></script>
+
+    <title>Login</title>
+
+</head>
+<body onload="local(), getUserTypeColor()">
+
+    <header>
+        <nav class="nav-main">
+            <div class="grid-container-nav">
+                <div class="row nav-container-row grid-fluid">
+                    <div class="col-md-2" style="display: flex; padding-bottom: 0.75em;"> 
+                        <a href="/index.html">
+                            <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cont-nav-center">
+                            <a class="nav-item nav-link" href="../index.html"> Planos</a>
+                            <a class="nav-item nav-link" href="./artigos.html"> Artigos</a>
+                            <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div id="bg-main-login" style="height: 100vh; min-height: fit-content;">
+            <div id="tops" class="container-login">
+                <div class="container-login-body">
+                    <form>
+                        <div class="col" style="padding-top: 2em;">
+                            <h1>Entrar</h1>
+                            <div class="Email"><label for="email">Endereço de email</label></div>
+                                <input id="login0" type="email" class="form-control form-control-lg" placeholder="email@gmail.com">
+                            <div style="padding-top: 2em;">
+                                <div class="Senha"><label for="exampleDropdownFormPassword2">Senha</label></div>
+                                <input id="password0" type="password" class="form-control form-control-lg"  placeholder="Senha">
+                            </div>
+                            <div class="login-two-options">
+                                <a href="./cadastro.html" class="login-a-cadastro">cadastre-se</a>
+                                <button type="submit" onclick="doLogin(event)" class="login-btn-submit">Entrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</body>
+</html>

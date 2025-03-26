@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sobrenos.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_perfil.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.3-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../scripts/login_app.js" defer></script>
+    
+    <title>Cadastro</title>
+
+</head>
+<body onload="getUserTypeColor()">
+    <header >
+        <nav class="nav-main">
+        <div class="grid-container-nav" >
+            <div class="row nav-container-row grid-fluid">
+                <div class="col-md-2" style="display: flex; padding-bottom: 0.75em;"> 
+                    <a href="/index.html">
+                        <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <div class="cont-nav-center">
+                        <a class="nav-item nav-link" href="../index.html"> Planos</a>
+                        <a class="nav-item nav-link" href="./artigos.html"> Artigos</a>
+                        <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </nav>
+    </header>
+
+    <section>
+        <div id="bg-main-login" style="height: 100vh; min-height: fit-content;">
+            <div class="container-login">
+                <div class="container-login-body">
+                    <div style="transform: translate(-10px,-35px);"> 
+                        <a href="./login.html" id="btn-anterior"></a>
+                    </div>
+                    <form>
+                        <h1>Cadastrar</h1>
+                        <div class="Email">Nome</label></div>
+                            <input id="nome1" type="text" class="form-control" placeholder="nome">
+                            <div class="Senha">Email</div>
+                            <input id="email1" type="email" class="form-control"  placeholder="email@gmail.com">
+
+                            <div style="padding-top: 0.5em;">
+                            
+                                <div class="Senha"><label >Senha</label></div>
+                                <input id="password1" type="password" class="form-control"  placeholder="Senha">
+                            </div>
+                        <!--<input type="checkbox" name="comfirma" value="aceitar"> -->
+                        
+                        <div class="row" style="justify-content: center;">
+                            <div class="row" style="padding-top: 2em; justify-content: center;">
+                            <button onclick="cadastrar(event)" class="login-btn-submit">Inscreva-se</button>
+                            </div>
+                        </div>
+                        <p style="padding-top: 1em; font-size: 14px;">
+                            Ao clicar em <span style="font-weight: bold;">escreva-se</span> você concorda com nossos 
+                            <a href="./termos.html" style="font-weight: bold;">termos e condições</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
