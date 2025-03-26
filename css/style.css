@@ -116,7 +116,8 @@ footer a:hover, footer p:hover {
     z-index: 111;
 }
 
-.nav-btn-login.hover-state {
+
+.nav-btn-login.hover-state{
     background-color: #58ffc2;
     transition: background-color 0.1s;
     outline: 2px solid rgb(0, 156, 0);
@@ -195,8 +196,23 @@ footer a:hover, footer p:hover {
     transition: background-color 0.5s;
     cursor: pointer;
 }
+
+.nav-btn-box{
+    width: 2.3em;
+    height: 2.3em;
+
+    background-color: wheat;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
 .nav-btn:hover{
     background-color: #58ffc2;
+    transition: background-color 0.1s;
+}
+
+.nav-btn-box:hover{
+    background-color: rgb(255, 218, 151);
     transition: background-color 0.1s;
 }
 
@@ -251,6 +267,11 @@ footer a:hover, footer p:hover {
     grid-column: 3;
   }
 
+#masterNav{
+    margin: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
 .nav-main-grid{
     background-color: #FFFAEC;
@@ -290,8 +311,98 @@ footer a:hover, footer p:hover {
     
 }
 
+.nav-side-bar{
+    display: block;
+    z-index: 1111;
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFAEC;
+    width: 400px;
+    max-width: 90%;
+    height: 100vh;
+    
+    padding: 1.2em;
+    border-top-left-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-left: 2px solid  #F8A764;
+    transform: translateX(100%);
+    animation: moveNavToLeft 0.5s forwards;
+
+}
+@keyframes moveNavToLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.nav-side-bar.deactive{
+    animation: moveNavToRight 0.5s forwards;
+    
+}
+
+@keyframes moveNavToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 
 
+
+.nav-background-color-change{
+    background-color: rgb(192, 218, 186);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 11;
+    animation: backgroundNavColorChange 0.5s forwards;
+
+}
+
+.nav-background-color-change.deactive{
+    z-index: 11;
+    animation: backgroundNavColorChangeBack 0.5s forwards;
+}
+
+@keyframes backgroundNavColorChange {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+  }
+
+  @keyframes backgroundNavColorChangeBack {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.nav-side-bar-items{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 90%;
+    margin-top: 30px;
+    padding-left: 20px;
+    gap: 20px;
+}
 
 .nav-right-buttons{
     display: grid; 

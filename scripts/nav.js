@@ -1,3 +1,4 @@
+
 // código para verificar a largura da pagina para assim poder modificar o nav
 // check o minimo de 800px de largura
 let widthMatch = window.matchMedia("(min-width: 800px)");
@@ -6,6 +7,7 @@ function checkPageWidth(mm) {
     if (mm.matches) {
         desktopNav()
     } else {
+
         mobileNav()
     }
     checkNavLinks(mm.matches)
@@ -26,7 +28,8 @@ function checkNavLinks(check){
         navLinks.innerHTML = `
             <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
             <a class="nav-item nav-link" href="javascript:void(0)" onclick="scrollToPos()" > Planos</a>
-            <a class="nav-item nav-link" href="/pages/artigos.html"> Artigos</a>`
+            <a class="nav-item nav-link" href="/pages/artigos.html"> Artigos</a>
+            `
     } else {
         navLinks.classList.add("null")
         navLinks.innerHTML = ''
@@ -56,17 +59,64 @@ function desktopNav(){
                     </div> `
         }
       navButtons.innerHTML = navB
-  }
+}
 
   function mobileNav(){
+
     let navRightButton = document.querySelector('.nav-right-buttons')
+
+
     navRightButton.innerHTML = `
         <div></div><div></div>
-        <button type="button"  class="nav-btn"
+        <button type="button"  class="nav-btn" onclick="activateSideBar()"
         style="background-image: url('/img/cardapio.png');
         margin-right: 20%;">
         </button>`
   }
+
+  function activateSideBar(){
+    const href = this.window.location.href;
+    let str = ''
+    if (href.includes('pages')) {
+      str = '.';
+    } else {
+      str = 'pages';
+    }
+  
+    document.querySelector('#sideNav').innerHTML = `
+                <div class="nav-side-bar">
+                    <button type="button"  class="nav-btn nav-btn-box" onclick="deactivateSideBar()"
+                    style="background-image: url('/img/cancel.png');
+                    margin-right: 20%;">
+                    </button>
+                      <nav class="nav-side-bar-items">
+                        <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
+                        <a class="nav-item nav-link" href="/pages/artigos.html"> Artigos</a>
+                        <a href="${str}/login.html">
+                          <button type="button" class="nav-btn" style="width: 100px; align-self: center; color: #fff;">login</button>
+                        </a>
+                      </nav>
+                    </div>
+                    <div class="nav-background-color-change"> 
+                </div>
+                `
+  }
+
+  function deactivateSideBar(){
+    // desativa o side Bar
+    const navSideBar = document.querySelector('.nav-side-bar')
+    navSideBar.classList.add('deactive')
+    document.querySelector('.nav-background-color-change').classList.add('deactive')
+
+    // espera a barra lateral terminar a animação para remove-la
+    navSideBar.addEventListener('animationend', () => {
+      document.querySelector('#sideNav').innerHTML = ``;
+    });
+
+
+  }
+
+  
   
   
   function dropNav(own){
