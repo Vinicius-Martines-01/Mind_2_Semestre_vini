@@ -279,7 +279,7 @@ input:valid + .hm-input-label{
 .psi-info{
     padding-left: 1em; 
     display: flex; 
-    flex-direction: row; 
+    flex-direction: column; 
     flex-wrap: wrap; 
     align-content: center;
 
