@@ -99,7 +99,7 @@ footer a:hover, footer p:hover {
     font-family: 'chillax';
     font-size: medium;
     font-weight: bold;
-    padding: 0.5em 4em;
+    padding: 0.6em 4em;
     margin: 0.25em;
     border-radius: 0.4em;
     border: none;
@@ -111,12 +111,13 @@ footer a:hover, footer p:hover {
 
 }
 
-.nav-right{
+.nav-right-container{
     width: 100%;
     z-index: 111;
 }
 
-.nav-btn-login.hover-state {
+
+.nav-btn-login.hover-state{
     background-color: #58ffc2;
     transition: background-color 0.1s;
     outline: 2px solid rgb(0, 156, 0);
@@ -195,8 +196,23 @@ footer a:hover, footer p:hover {
     transition: background-color 0.5s;
     cursor: pointer;
 }
+
+.nav-btn-box{
+    width: 2.3em;
+    height: 2.3em;
+
+    background-color: wheat;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
 .nav-btn:hover{
     background-color: #58ffc2;
+    transition: background-color 0.1s;
+}
+
+.nav-btn-box:hover{
+    background-color: rgb(255, 218, 151);
     transition: background-color 0.1s;
 }
 
@@ -243,24 +259,7 @@ footer a:hover, footer p:hover {
 }
 
 .logo_size {
-    width: 7.5rem;
-
-}
-
-.grid-container-nav {
-    display: grid;
-    grid-template-rows: auto;
-    min-height: fit-content;
-    height: 60px;
-    width: 100%;
-    margin-top: 1px;
-    align-items: baseline
-}
-
-.nav-container-row {
-    display: grid;
-    grid-template-columns: 10em;
-    width: 100%;
+    width: 6rem;
 
 }
 
@@ -268,27 +267,142 @@ footer a:hover, footer p:hover {
     grid-column: 3;
   }
 
+#masterNav{
+    margin: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
-.nav-main {
-    margin-top: 0.5em;
-    margin-left: 15px;
-    margin-right: 15px;
-    min-height: fit-content;
-    margin-bottom: -15px;
+.nav-main-grid{
+    background-color: #FFFAEC;
+    display: grid;
+    grid-template-columns: max-content auto min-content;
+    padding-top: 10px;
+    padding-inline: 30px;
+    height: 65px;
+}
+
+.cont-nav-left {
+    display: flex; 
+    padding-bottom: 0.75em; 
+    min-width: fit-content;
 }
 
 .cont-nav-center {
     display: grid; 
-    grid-template-columns: auto auto 300px;
-    margin-left: -2em;
-    margin-right: 2em;
-
-    justify-items: flex-start;
-    grid-column-gap: 20px;
-    padding-top: 0.75em
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    min-width: max-content;
+    justify-content: flex-end;
+    padding-top: 0.35em
 }
 
+.cont-nav-center.null {
+    gap: 0;
+    min-width: max-content;
+    padding-top: 0.35em
+}
 
+.cont-nav-right{
+    width: inherit;
+    display: flex; 
+    justify-content: flex-end;
+    transform: translateY(-5px);
+    
+}
+
+.nav-side-bar{
+    display: block;
+    z-index: 1111;
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFAEC;
+    width: 400px;
+    max-width: 90%;
+    height: 100vh;
+    
+    padding: 1.2em;
+    border-top-left-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-left: 2px solid  #F8A764;
+    transform: translateX(100%);
+    animation: moveNavToLeft 0.5s forwards;
+
+}
+@keyframes moveNavToLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.nav-side-bar.deactive{
+    animation: moveNavToRight 0.5s forwards;
+    
+}
+
+@keyframes moveNavToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+
+
+.nav-background-color-change{
+    background-color: rgb(192, 218, 186);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 11;
+    animation: backgroundNavColorChange 0.5s forwards;
+
+}
+
+.nav-background-color-change.deactive{
+    z-index: 11;
+    animation: backgroundNavColorChangeBack 0.5s forwards;
+}
+
+@keyframes backgroundNavColorChange {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+  }
+
+  @keyframes backgroundNavColorChangeBack {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.nav-side-bar-items{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 90%;
+    margin-top: 30px;
+    padding-left: 20px;
+    gap: 20px;
+}
 
 .nav-right-buttons{
     display: grid; 
