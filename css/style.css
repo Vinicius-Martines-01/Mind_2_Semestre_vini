@@ -35,9 +35,9 @@ body, html {
 
 footer {
     padding-top: 5em;
-    background-image: linear-gradient(to bottom, #1C5841, #113528 75%);
+    background-image: linear-gradient(to bottom, #F8A764, #b67b4a 75%);
 
-    outline: 2px solid #1C5841;
+    outline: 2px solid #F8A764;
     min-height: fit-content; 
     height:  285px;
     margin-bottom: 0;
@@ -52,13 +52,12 @@ footer > div{
 
 footer hr{
     height: 1px;
-    background-color: #a1dfaa;
+    background-color: black;
     width: 90%;
     border-radius: 25%;
 }
 
 .grid-footer{
-
     height: fit-content;
     display: grid;
     width: 60%;
@@ -69,18 +68,30 @@ footer hr{
 
 }
 
+.grid-footer div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 25px;
+}
+
 footer a, footer p {
-    color: rgb(255, 255, 255);
+    color: black;
     text-decoration: none;
     height: 30px;
 }
 
 footer a:hover, footer p:hover {
-    color: rgb(206, 255, 191);
+    color: rgb(63, 58, 48);
     text-decoration: none;
     cursor: pointer;
     
 }
+
+footer form{
+    padding-left: 15px;
+}
+
 
 .footer-logo {
     font-family: 'chillax';
@@ -90,7 +101,7 @@ footer a:hover, footer p:hover {
 }
 
 .footer-logo:hover{
-    color: white;
+    color: rgb(63, 58, 48);
     cursor: default;
     margin-bottom: 15px;
 }
@@ -233,7 +244,15 @@ footer a:hover, footer p:hover {
     transition: background-color 0.1s;
 }
 
+.btn-circle{
+    width: fit-content;
+    height: fit-content;
+    min-width: 45px;
+    min-height: 45px;
+    padding: 1em 1em;
+    border-radius: 50%;
 
+}
 
 .btn-orange {
     font-size: 12px;

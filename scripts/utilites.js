@@ -10,7 +10,15 @@ function copyNumber() {
   }
 }
 
+function copyValue(value) {
 
+try {
+  navigator.clipboard.writeText(value);
+
+} catch (error) {
+  console.error(error);
+}
+}
 
 function toHome(page){
   usuario = JSON.parse(sessionStorage.getItem('user'))
