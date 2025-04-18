@@ -311,12 +311,18 @@ footer form{
     position: relative;
 }
 
+#sideNav{
+    overflow-x: hidden;
+    position: relative;
+}
+
 #sideNav.lock{
     height: 100vh;
     overflow-y: hidden;
     position: absolute;
     width: 100vw;
     top: 0;
+
 }
 
 .cont-nav-left {
@@ -361,7 +367,7 @@ footer form{
     width: 400px;
     max-width: 90%;
     height: 100vh;
-
+    overflow-x: hidden;
     
     padding: 1.2em;
     border-top-left-radius: 30px;
