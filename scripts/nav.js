@@ -135,7 +135,7 @@ function desktopNav(){
   function mobileNav(){
 
     let navRightButton = document.querySelector('.nav-right-buttons')
-
+    usuario = JSON.parse(sessionStorage.getItem('user'))
     // cria o o btn que abre o side bar
     navRightButton.innerHTML = `
         <div></div><div></div>
@@ -153,6 +153,43 @@ function desktopNav(){
         str = 'pages';
       }
 
+      let sideBarItems = ''
+
+      if (usuario !== null) {
+        if (href.includes('login')) {
+          sideBarItems = `
+          <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
+          <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
+          `
+        } else if (href.includes('perfil')){
+          sideBarItems = `
+          <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
+          <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
+          <button type="button"  onclick="logout()" class="nav-btn nav-btn-logout"
+          style="background-image: url('/img/user-logout3.png');">
+          </button> 
+          `
+
+        } else {
+          sideBarItems = `
+          <a href="${str}/perfil-paciente.html">
+            <button type="button" class="nav-btn" style="width: 100px; align-self: center; color: #fff;">
+            Perfil
+            </button>
+          </a>
+          <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
+          <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
+
+          `
+        }
+      } else {
+      sideBarItems = `   
+        <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
+        <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
+        <a href="${str}/login.html">
+          <button type="button" class="nav-btn" style="width: 100px; align-self: center; color: #fff;">login</button>
+        </a>`
+      }
       // cria o side bar fora da tela
       document.querySelector('#sideNav').innerHTML = `
       <div class="nav-side-bar">
@@ -161,11 +198,7 @@ function desktopNav(){
           margin-right: 20%;">
           </button>
             <nav class="nav-side-bar-items">
-              <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
-              <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
-              <a href="${str}/login.html">
-                <button type="button" class="nav-btn" style="width: 100px; align-self: center; color: #fff;">login</button>
-              </a>
+              ${sideBarItems}
             </nav>
           </div>
           <div id="nav-background-color-change"> 
