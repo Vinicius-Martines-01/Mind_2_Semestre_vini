@@ -10,7 +10,7 @@
    
 </div>
 <br>
-<b> Link da plataforma:</b> https://mind-your-359d.vercel.app/
+<b> Link da plataforma:</b> https://mind-2.vercel.app/
 <p>Login: snoopy | Senha: 1950</p>
 
 ## Sobre o projeto
