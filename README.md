@@ -1,7 +1,7 @@
 <p align="center">
-<img align="auto" width="700px" src="img/background&logo_readme.png">
+<img align="auto" width="700px" src="img/background&logo_readmeme.png">
 </p>
-<h1 align="center"> Mind - your mind </h1>
+<h1 align="center"> Mind - your mind - Episode II</h1>
 <p align="center">Aqui nossa missão é tornar o cuidado psicológico acessível a todos, oferecendo uma plataforma intuitiva que conecta você a psicólogos qualificados, de forma simples e segura. </p>
 
 <div align="center">
@@ -10,7 +10,7 @@
    
 </div>
 <br>
-<b> Link da plataforma:</b> https://mind-your-359d.vercel.app/
+<b> Link da plataforma:</b> https://mind-2.vercel.app/
 <p>Login: snoopy | Senha: 1950</p>
 
 ## Sobre o projeto
