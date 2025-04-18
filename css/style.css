@@ -35,11 +35,11 @@ body, html {
 
 footer {
     padding-top: 5em;
-    background-image: linear-gradient(to bottom, #F8A764, #b67b4a 75%);
+    background-image: linear-gradient(to bottom, #F8A764, #eba161 75%);
 
     outline: 2px solid #F8A764;
-    min-height: fit-content; 
-    height:  285px;
+    min-height: -webkit-fit-content;    min-height: -moz-fit-content;    min-height: fit-content; 
+
     margin-bottom: 0;
     padding-bottom: 0.5vh;
 
@@ -58,14 +58,18 @@ footer hr{
 }
 
 .grid-footer{
-    height: fit-content;
+    min-height: -webkit-fit-content;    min-height: -moz-fit-content;    min-height: fit-content; 
     display: grid;
-    width: 60%;
-    justify-self: center;
+    max-width: 60%;
+    margin-inline: auto;
     grid-template-columns: 50% 50%;
     column-gap: 15em;
+    flex-grow: 1;
 
 
+}
+@media(max-width:640px){
+    .grid-footer { display: block;}
 }
 
 .grid-footer div{
@@ -301,6 +305,20 @@ footer form{
     height: 65px;
 }
 
+/* trava a rolagem da tela quando o side bar aparece*/
+.nav-main-grid.lock{
+    z-index: 999;
+    position: relative;
+}
+
+#sideNav.lock{
+    height: 100vh;
+    overflow-y: hidden;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+}
+
 .cont-nav-left {
     display: flex; 
     padding-bottom: 0.75em; 
@@ -330,6 +348,7 @@ footer form{
     
 }
 
+
 .nav-side-bar{
     display: block;
     z-index: 1111;
@@ -342,6 +361,7 @@ footer form{
     width: 400px;
     max-width: 90%;
     height: 100vh;
+
     
     padding: 1.2em;
     border-top-left-radius: 30px;
@@ -349,7 +369,8 @@ footer form{
     margin-bottom: 0;
     border-left: 2px solid  #F8A764;
     transform: translateX(100%);
-    animation: moveNavToLeft 0.5s forwards;
+
+
 
 }
 @keyframes moveNavToLeft {
@@ -359,6 +380,11 @@ footer form{
     100% {
       transform: translateX(0);
     }
+}
+
+.nav-side-bar.active{
+    transform: translateX(100%);
+    animation: moveNavToLeft 0.5s forwards;
 }
 
 .nav-side-bar.deactive{
@@ -377,7 +403,7 @@ footer form{
 
 
 
-.nav-background-color-change{
+#nav-background-color-change.active{
     background-color: rgb(192, 218, 186);
     opacity: 0;
     position: absolute;
@@ -385,12 +411,13 @@ footer form{
     right: 0;
     bottom: 0;
     width: 100%;
+    height: 100vh;
     z-index: 11;
     animation: backgroundNavColorChange 0.5s forwards;
 
 }
 
-.nav-background-color-change.deactive{
+#nav-background-color-change.deactive{
     z-index: 11;
     animation: backgroundNavColorChangeBack 0.5s forwards;
 }

@@ -13,7 +13,6 @@
 /* Colors Orange #F8A764 | Green #00AD6E*/
 
 .container-login{
-    display: flexbox;
     justify-self: end;
     background-color: white;
     transition: background-color 0.25s;
