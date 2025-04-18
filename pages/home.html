@@ -11,6 +11,8 @@
     
     <script type="text/javascript" src="/scripts/login_app.js" defer></script>
     <script src="/scripts/filtro.js"></script>
+    <script type="text/javascript" src="/scripts/nav.js" defer></script>
+
 
     <script>
         usuario = JSON.parse(sessionStorage.getItem('user'))
@@ -21,42 +23,26 @@
 
 </head>
 <body onload="local()">
-    <header>
-        <nav class="nav-main">
-            <div class="grid-container-nav">
-                <div class="row nav-container-row grid-fluid">
-                    <div class="col-md-2" style="display: flex; padding-bottom: 0.75em;"> 
-                        <a href="home.html">
-                            <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="cont-nav-center">
-                            <a class="nav-item nav-link" href="../index.html"> Planos</a>
-                            <a class="nav-item nav-link" href="./artigos.html"> Artigos</a>
-                            <a class="nav-item nav-link" href="/pages/sobrenos.html"> Sobre nós</a>
-                        </div>
-                    </div>
-                    <div class="col" style="display: flex; justify-content: flex-end;">  
-                        <div class="nav-right-buttons">
-                            <div></div>
-                            <button type="button"  class="nav-btn"
-                                style="background-image: url('/img/magnifying-glass-solid.png');">
-                            </button>  
-                            <a href="/pages/perfil-paciente.html">
-                                <button type="button"  class="nav-btn"
-                                style="background-image: url('/img/user-regular.png');
-                                margin-right: 20%;">
-                            </button>
-                            
-                            </a> 
-                        </div>
-                    </div>
+    <header id="masterNav">
+        <nav class="nav-main-grid">
+            <div class="cont-nav-left"> 
+                <a id="mindHome" href="">
+                    <img src="/img/logo_p3.png" class="logo_size" alt="logo" style="cursor: pointer;"/>
+                </a>
+            </div>
+            <div class="cont-nav-center">
+
+            </div>
+            <div class="cont-nav-right">  
+                <div class="nav-right-buttons">
+
                 </div>
             </div>
-    
         </nav>
-        </header>
+            <div id="sideNav">
+            </div>
+    </header>
+
     
    
     <section>
@@ -383,25 +369,8 @@
         </div>
     </section>
     
-    <footer>
-        <div class="grid-footer">
-            <div>
-                <p>Sobre nós</p>
-                <p>Artigos</p>
-                <a href="./termos.html">Termos e Acordos</a>
-            </div>
-            <div>
-                <a href="./atri.html"><p>Atribuições</p></a>
-                <p>Canal de denúncia</p>
-                <p>Contatos</p>
-            </div>
-        </div>
-        <div style="display: flex; justify-content: center;">
-            <hr>
-        </div>
-        <p class="footer-logo">&copy; Mind - 2024
-        </p>
-</footer>
+    <footer id="mainFooter">
+    </footer>
 
     <script src="/scripts/pesquisa.js"></script>
     <script type="text/javascript" defer>
