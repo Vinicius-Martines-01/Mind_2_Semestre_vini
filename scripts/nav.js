@@ -246,7 +246,7 @@ function desktopNav(){
       document.querySelector('.nav-main-grid').classList.remove('lock')
       document.querySelector('#sideNav').classList.remove('lock')
   
-  }, 350);
+  }, 400);
 
 
   }
