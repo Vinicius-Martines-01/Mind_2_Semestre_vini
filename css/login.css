@@ -18,13 +18,15 @@
     transition: background-color 0.25s;
     height: inherit;
     width: 50%;
-
     border-top-left-radius: 10%;
     z-index: 2;
     animation: 0.3s ease-out 0s 1 slideLeft;
-    
 }
-
+@media(max-width:450px){
+    .container-login{
+        width: 100%;
+    }
+}
 .container-login-body{
     height: 100%;
     width: 100%;
