@@ -212,18 +212,23 @@ function desktopNav(){
     const navSideBar = document.querySelector('.nav-side-bar')
     const changeBackground = document.querySelector('#nav-background-color-change')
 
-    // adiciona a class ativa
-    navSideBar.classList.add('active')
-    changeBackground.classList.add('active')
-    // remove, se tiver, a class desativa
-    navSideBar.classList.remove('deactive')
-    changeBackground.classList.remove('deactive')
+    // check se a animação defechar terminou
+    if (!document.querySelector('#sideNav').classList.contains('lock')){
+      // adiciona a class ativa
+      navSideBar.classList.add('active')
+      changeBackground.classList.add('active')
+      // remove, se tiver, a class desativa
+      navSideBar.classList.remove('deactive')
+      changeBackground.classList.remove('deactive')
 
-    // trava a tela
-    document.querySelector('.nav-main-grid').classList.add('lock')
-    document.querySelector('#sideNav').classList.add('lock')
+      // trava a tela
+      document.querySelector('.nav-main-grid').classList.add('lock')
+      document.querySelector('#sideNav').classList.add('lock')
+    }
+
 
   }
+
 
   function deactivateSideBar(){
     // desativa o side Bar
@@ -237,8 +242,11 @@ function desktopNav(){
     changeBackground.classList.add('deactive')
 
     // destrava a tela
-    document.querySelector('.nav-main-grid').classList.remove('lock')
-    document.querySelector('#sideNav').classList.remove('lock')
+    setTimeout(function() {
+      document.querySelector('.nav-main-grid').classList.remove('lock')
+      document.querySelector('#sideNav').classList.remove('lock')
+  
+  }, 300);
 
 
   }
