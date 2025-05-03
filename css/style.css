@@ -453,6 +453,7 @@ footer form{
 nav .nav-item{
     color: black;
     transition: color 0.5s;
+    font-family: 'poppins', sans-serif;
 
 }
 nav .nav-item:hover{
