@@ -35,14 +35,14 @@ function checkNavLinks(check){
         mindHome.href = 'javascript:void(0)'
       } 
       else{
-      mindHome.href = '/pages/home.html'
+      mindHome.href = './pages/home.html'
       }
     } else {
       // se estiver deslogado
       if (window.location.pathname.includes('index')){
          mindHome.href = 'javascript:void(0)'
       } else {
-        mindHome.href = "../index.html"
+        mindHome.href = "/index.html"
       }
     }
 
@@ -58,22 +58,22 @@ function checkNavLinks(check){
         switch (pathName) {
           case '/index.html':
             document.querySelector('#linkPlanos').onclick = function() { scrollToPos(); };
-            document.querySelector('#linkArtigos').href = '/pages/artigos.html';
-            document.querySelector('#linkSobreNos').href = '/pages/sobrenos.html';
+            document.querySelector('#linkArtigos').href = './pages/artigos.html';
+            document.querySelector('#linkSobreNos').href = './pages/sobrenos.html';
             break;
 
           case '/pages/artigos.html':
-            document.querySelector('#linkPlanos').href = '../index.html';
+            document.querySelector('#linkPlanos').href = '/index.html';
             document.querySelector('#linkSobreNos').href = '/pages/sobrenos.html';
             break;
     
           case '/pages/sobrenos.html':
-            document.querySelector('#linkPlanos').href = '../index.html';
+            document.querySelector('#linkPlanos').href = '/index.html';
             document.querySelector('#linkArtigos').href = '/pages/artigos.html';
             break;
 
           default:
-            document.querySelector('#linkPlanos').href = '../index.html';
+            document.querySelector('#linkPlanos').href = '/index.html';
             document.querySelector('#linkArtigos').href = '/pages/artigos.html';
             document.querySelector('#linkSobreNos').href = '/pages/sobrenos.html';
           }
@@ -96,21 +96,21 @@ function desktopNav(){
       if (this.window.location.href.includes('perfil')){
         navB += `<div></div>
                       <button type="button"  class="nav-btn"
-                          style="background-image: url('/img/magnifying-glass-solid.png');">
+                          style="background-image: url('../img/magnifying-glass-solid.png');">
                       </button>  
 
                       <button type="button"  onclick="logout()" class="nav-btn nav-btn-logout"
-                      style="background-image: url('/img/user-logout3.png');">
+                      style="background-image: url('../img/user-logout3.png');">
                       </button> `
       } else {
       // else: usuário está logado mas não no perfil
       navB += `<div></div>
               <button type="button"  class="nav-btn"
-                style="background-image: url('/img/magnifying-glass-solid.png');">
+                style="background-image: url('../img/magnifying-glass-solid.png');">
               </button>  
-              <a href="/pages/perfil-paciente.html">
+              <a href="../pages/perfil-paciente.html">
               <button type="button"  class="nav-btn"
-                style="background-image: url('/img/user-regular.png');
+                style="background-image: url('../img/user-regular.png');
                 margin-right: 20%;">
               </button>`
       }
@@ -140,7 +140,7 @@ function desktopNav(){
     navRightButton.innerHTML = `
         <div></div><div></div>
         <button type="button"  class="nav-btn" onclick="activateSideBar()"
-        style="background-image: url('/img/cardapio.png');
+        style="background-image: url('./img/cardapio.png');
         margin-right: 20%;">
         </button>`
 
@@ -166,7 +166,7 @@ function desktopNav(){
           <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
           <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
           <button type="button"  onclick="logout()" class="nav-btn nav-btn-logout"
-          style="background-image: url('/img/user-logout3.png');">
+          style="background-image: url('./img/user-logout3.png');">
           </button> 
           `
 
@@ -194,7 +194,7 @@ function desktopNav(){
       document.querySelector('#sideNav').innerHTML = `
       <div class="nav-side-bar">
           <button type="button"  class="nav-btn nav-btn-box" onclick="deactivateSideBar()"
-          style="background-image: url('/img/cancel.png');
+          style="background-image: url('./img/cancel.png');
           margin-right: 20%;">
           </button>
             <nav class="nav-side-bar-items">
@@ -288,26 +288,26 @@ function desktopNav(){
 document.getElementById('mainFooter').innerHTML = `
               <div class="grid-footer">
                 <div>
-                    <a href="/pages/sobrenos.html">Sobre nós</a>
-                    <a href="/pages/artigos.html">Artigos</a>
-                    <a href="/pages/termos.html">Termos e Acordos</a>
+                    <a href="../pages/sobrenos.html">Sobre nós</a>
+                    <a href="../pages/artigos.html">Artigos</a>
+                    <a href="../pages/termos.html">Termos e Acordos</a>
                     <a href="">Entre para nosso time</a>
                 </div>
                 <div>
                     <a href="javascript:void(0)"><p>Planos</p></a>
-                    <a href="/pages/atri.html"><p>Atribuições</p></a>
+                    <a href="../pages/atri.html"><p>Atribuições</p></a>
                     <a href="javascript:void(0)">Canal de denúncia</a>
 
                     <p style="margin-bottom: -15px;">Contatos:</p>
                     <form>                       
                         <button value="mind@falsoemail.com" onclick="copyValue(value)" type="button" title="copiar email"  class="nav-btn btn-circle"
-                        style="background-image: url('/img/mail_icon.svg');">
+                        style="background-image: url('../img/mail_icon.svg');">
                         </button>
                         <button value="mind-2@falsoemail.com" onclick="copyValue(value)" type="button" title="copiar email"  class="nav-btn btn-circle"
-                        style="background-image: url('/img/mail_icon.svg');">
+                        style="background-image: url('../img/mail_icon.svg');">
                         </button>
                         <button value="(11) 1111-1111" onclick="copyValue(value)" type="button" title="copiar telefone"  class="nav-btn btn-circle"
-                        style="background-image: url('/img/call_icon.svg');">
+                        style="background-image: url('../img/call_icon.svg');">
                         </button>
                     </form>
 
