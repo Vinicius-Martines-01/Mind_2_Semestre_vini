@@ -35,7 +35,7 @@ function checkNavLinks(check){
         mindHome.href = 'javascript:void(0)'
       } 
       else{
-      mindHome.href = './pages/home.html'
+      mindHome.href = '/pages/home.html'
       }
     } else {
       // se estiver deslogado
