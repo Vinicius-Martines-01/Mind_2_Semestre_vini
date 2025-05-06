@@ -1,19 +1,26 @@
+import mysql from 'mysql2';
 import { Sequelize } from 'sequelize';
+
+// Abre a conexão com o sql
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'admin', 
+});
+
+// Cria o database mind_plus_ultra
+connection.query('CREATE DATABASE IF NOT EXISTS mind_plus_ultra', (err, results) => {
+  if (err) throw err;
+  console.log('Database já existe');
+});
+// fecha a conexão
+connection.end();  
 
 // Usa o banco de dados mind_plus_ultra
 const sequelize = new Sequelize('mind_plus_ultra', 'root', 'admin', {
   host: 'localhost',
   dialect: 'mysql',
 });
-
-// Cria o banco de dados TOP DAS GALÁXIAS
-sequelize.query('CREATE DATABASE mind_plus_ultra')
-  .then(() => {
-    console.log('Banco de dados criado com sucesso!');
-  })
-  .catch(err => {
-    console.error('Erro ao criar o banco de dados:', err);
-  });
 
   
 export async function authenticate() {
@@ -29,4 +36,3 @@ export async function close() {
 }
 
 export default sequelize;
-console.log('Você esta aqui')

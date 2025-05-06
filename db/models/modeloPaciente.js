@@ -35,6 +35,11 @@ Paciente.init({
   endereco: {
     type: DataTypes.STRING,
     allowNull: true
+  },
+  img_perfil:{
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: ''
   }
 }, {
   sequelize, // A instância do Sequelize
