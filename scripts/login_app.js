@@ -1,7 +1,9 @@
 
 function local(){
 
-    if (localStorage.getItem('usersHere') === null) {
+    // quando não tiver o vetor usuario e o site estiver offline
+    if (localStorage.getItem('usersHere') === null && window.location.hostname.includes("vercel")) {
+
         const ds = [ 
             { id: 1, login: "gabriel", password: "1234", email: "gabriel@gmail.com", psi: false, img_perfil:''},//[0]
             { id: 2, login: "amanda", password: "12345@", email: "amanda@gmail.com", psi: false, img_perfil:'amanda.png'},//[1]
@@ -18,11 +20,13 @@ function local(){
 function doLogin(event){
     event.preventDefault();
 
-    const usuarios = JSON.parse(localStorage.getItem("usersHere"))
-    
     let log = document.querySelector("#login0").value
     let senha = document.querySelector('#password0').value
 
+    // check - Versão Online; ELSE - Versão offline
+    if (window.location.hostname.includes("vercel")){
+        const usuarios = JSON.parse(localStorage.getItem("usersHere")) // busca os usuarios do vetor
+    
         for(let i = 0; i < usuarios.length; i++){
             if((log == usuarios[i].login || log == usuarios[i].email) && senha == usuarios[i].password){
                 let n = JSON.stringify(usuarios[i]);
@@ -30,25 +34,29 @@ function doLogin(event){
                 window.location.href =  window.location.href.replace("login.html","") + "home.html"
                 break
             }
+    }
 }       
 }
 
 function cadastrar(event) {
     event.preventDefault();
 
-    var usuarios = JSON.parse(localStorage.getItem("usersHere"))
     let nome = document.querySelector("#nome1").value
     let senha = document.querySelector("#password1").value
     let email = document.querySelector("#email1").value
 
-    if (nome !== '' && senha !== '' && email !== ''){
-        let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
-        usuarios.push(user)
+    if (window.location.hostname.includes("vercel")){
+        var usuarios = JSON.parse(localStorage.getItem("usersHere"))
+
+        if (nome !== '' && senha !== '' && email !== ''){
+            let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
+            usuarios.push(user)
+            
+            localStorage.setItem("usersHere", JSON.stringify(usuarios))
+            alert('Conta Registrada!')
+            window.location.href =  window.location.href.replace("/pages/cadastro.html","")
         
-        localStorage.setItem("usersHere", JSON.stringify(usuarios))
-        alert('Conta Registrada!')
-        window.location.href =  window.location.href.replace("/pages/cadastro.html","")
-    
+        }
     }
   
   }
