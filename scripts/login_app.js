@@ -1,54 +1,87 @@
+const PORT = 8080; // port principal
 
 function local(){
+    if (window.location.hostname.includes("vercel")){
+    // quando não tiver o vetor usuario e o site estiver offline
+        if (localStorage.getItem('usersHere') === null) {
 
-    if (localStorage.getItem('usersHere') === null) {
-        const ds = [ 
-            { id: 1, login: "gabriel", password: "1234", email: "gabriel@gmail.com", psi: false, img_perfil:''},//[0]
-            { id: 2, login: "amanda", password: "12345@", email: "amanda@gmail.com", psi: false, img_perfil:'amanda.png'},//[1]
-            { id: 3, login: "ladygaga", password: "123456@", email: "ladygaga@gmail.com", psi: false, img_perfil:''},//[2]
-            { id: 4, login: "snoopy", password: "1950", email: "snoopy@gmail.com", psi: false, img_perfil:'snoopy.png'}
-         ]
-        let n = JSON.stringify(ds);
-        localStorage.setItem("usersHere", n);   
-        return ds  
-    } 
-
+            const ds = [ 
+                { id: 1, login: "gabriel", password: "1234", email: "gabriel@gmail.com", img_perfil:''},//[0]
+                { id: 2, login: "amanda", password: "12345@", email: "amanda@gmail.com", img_perfil:'amanda.png'},//[1]
+                { id: 3, login: "ladygaga", password: "123456@", email: "ladygaga@gmail.com", img_perfil:''},//[2]
+                { id: 4, login: "snoopy", password: "1950", email: "snoopy@gmail.com", img_perfil:'snoopy.png'}
+            ]
+            let n = JSON.stringify(ds);
+            localStorage.setItem("usersHere", n);   
+            return ds  
+        }
+    }
 }
 
 function doLogin(event){
     event.preventDefault();
 
-    const usuarios = JSON.parse(localStorage.getItem("usersHere"))
-    
-    let log = document.querySelector("#login0").value
+    let login = document.querySelector("#login0").value
     let senha = document.querySelector('#password0').value
 
+    // check - Versão Online; ELSE - Versão offline
+    if (window.location.hostname.includes("vercel")){
+        const usuarios = JSON.parse(localStorage.getItem("usersHere")) // busca os usuarios do vetor
+    
         for(let i = 0; i < usuarios.length; i++){
-            if((log == usuarios[i].login || log == usuarios[i].email) && senha == usuarios[i].password){
+            if((login == usuarios[i].login || login == usuarios[i].email) && senha == usuarios[i].password){
                 let n = JSON.stringify(usuarios[i]);
                 sessionStorage.setItem("user", n)
                 window.location.href =  window.location.href.replace("login.html","") + "home.html"
                 break
             }
-}       
+        }
+    } else {
+        // FAZ O LOGIN ACESSANDO O BANCO DE DADOS
+        (async () => {
+            try {
+                const response = await fetch(`http://localhost:${PORT}/api/paciente/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ login, senha })
+                });
+                const data = await response.json();
+                
+                if (response.ok) {
+                    let n = JSON.stringify(data.user);
+                    sessionStorage.setItem("user", n)
+                    window.location.href =  window.location.href.replace("login.html","") + "home.html"
+                } else {
+                    console.log(`Erro: ${data.erro}`);
+                }
+
+            } catch (error) {
+            console.log(`Erro na requisição: ${error.message}`);
+            }
+
+        })();
+    }
 }
 
 function cadastrar(event) {
     event.preventDefault();
 
-    var usuarios = JSON.parse(localStorage.getItem("usersHere"))
     let nome = document.querySelector("#nome1").value
     let senha = document.querySelector("#password1").value
     let email = document.querySelector("#email1").value
 
-    if (nome !== '' && senha !== '' && email !== ''){
-        let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
-        usuarios.push(user)
+    if (window.location.hostname.includes("vercel")){
+        var usuarios = JSON.parse(localStorage.getItem("usersHere"))
+
+        if (nome !== '' && senha !== '' && email !== ''){
+            let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
+            usuarios.push(user)
+            
+            localStorage.setItem("usersHere", JSON.stringify(usuarios))
+            alert('Conta Registrada!')
+            window.location.href =  window.location.href.replace("/pages/cadastro.html","")
         
-        localStorage.setItem("usersHere", JSON.stringify(usuarios))
-        alert('Conta Registrada!')
-        window.location.href =  window.location.href.replace("/pages/cadastro.html","")
-    
+        }
     }
   
   }
