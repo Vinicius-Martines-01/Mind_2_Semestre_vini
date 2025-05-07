@@ -11,6 +11,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server/server.js",
+    "seed:paciente": "node scripts/createDefaultUsers.js",
+    "db:server": "node server/server.js"
+    
   }
 }

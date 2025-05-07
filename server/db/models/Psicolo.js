@@ -1,11 +1,9 @@
-// models/Usuario.js
 import sequelize from '../database.js';
-
-// Importar a classe Sequelize e DataTypes
-const { Sequelize, DataTypes } = require('sequelize');
+import { Sequelize, DataTypes } from 'sequelize';
 
 // Definir o modelo de Psicologos
 class Psicologo extends Sequelize.Model {}
+
 Psicologo.init({
   nome: {
     type: DataTypes.STRING,
