@@ -33,7 +33,7 @@ function doLogin(event){
             if((login == usuarios[i].login || login == usuarios[i].email) && senha == usuarios[i].password){
                 let n = JSON.stringify(usuarios[i]);
                 sessionStorage.setItem("user", n)
-                window.location.href =  window.location.href.replace("login.html","") + "home.html"
+                window.location.href =  window.location.href.replace("login.html", "home.html")
                 break
             }
         }
@@ -51,7 +51,7 @@ function doLogin(event){
                 if (response.ok) {
                     let n = JSON.stringify(data.user);
                     sessionStorage.setItem("user", n)
-                    window.location.href =  window.location.href.replace("login.html","") + "home.html"
+                    window.location.href =  window.location.href.replace("login.html", "home.html") 
                 } else {
                     console.log(`Erro: ${data.erro}`);
                 }
@@ -67,10 +67,11 @@ function doLogin(event){
 function cadastrar(event) {
     event.preventDefault();
 
-    let nome = document.querySelector("#nome1").value
-    let senha = document.querySelector("#password1").value
-    let email = document.querySelector("#email1").value
+    let nome = document.querySelector("#nome0").value
+    let email = document.querySelector("#email0").value
+    let senha = document.querySelector("#password0").value
 
+    // faz o cadastro online
     if (window.location.hostname.includes("vercel")){
         var usuarios = JSON.parse(localStorage.getItem("usersHere"))
 
@@ -80,9 +81,29 @@ function cadastrar(event) {
             
             localStorage.setItem("usersHere", JSON.stringify(usuarios))
             alert('Conta Registrada!')
-            window.location.href =  window.location.href.replace("/pages/cadastro.html","")
+            window.location.href =  window.location.href.replace("cadastro.html","login.html")
         
         }
+    } else { // faz o cadastro offline usando o pc como servidor
+        (async () => {
+            try {
+                const response = await fetch(`http://localhost:${PORT}/api/paciente`, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ nome, email, senha })
+                });
+          
+                const data = await response.json();
+          
+                if (response.ok) {
+                    window.location.href = window.location.href.replace("cadastro.html","login.html")
+                } else {
+                  console.log(`Erro: ${data.erro}`);
+                }
+              } catch (error) {
+                console.log(`Erro na requisição: ${error.message}`);
+              }
+        })();
     }
   
   }

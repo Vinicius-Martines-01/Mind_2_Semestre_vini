@@ -114,7 +114,7 @@ input{
     align-items: flex-start;
     justify-content: center;
 }
-.Email{
+.login-titulo{
     width: 100%;
     text-transform: uppercase;
     right: 10px;
@@ -126,22 +126,6 @@ input{
     letter-spacing: 2px;
     font-weight: 700;
 }        
-
-.Senha{
-    width: 100%;
-    text-transform: uppercase;
-    right: 10px;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    flex-direction: row;
-    padding: 5px;
-    letter-spacing: 2px;
-    font-weight: 700;
-
-
-}
-
 
 
 .icon-click{
@@ -189,10 +173,13 @@ input{
     display: grid;
     grid-template-columns:  repeat(2, 1fr);
     padding-top: 2em; 
-    justify-self: center; 
+    margin: auto;
+    width: 75%;
+    position: relative;
     column-gap: 50px;
     flex-wrap: wrap;
 }
+
 
 #bg-main-login{
     background: url('/img/login_background.png');
