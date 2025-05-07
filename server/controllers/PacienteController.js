@@ -1,8 +1,9 @@
 import Paciente from '../db/models/Paciente.js'; 
 
 class PacienteController {
-  async criar(nome, email, senha, dt_nascimento, genero, telefone, endereco) {
-    const usuario = await Paciente.create({ nome, email, senha, dt_nascimento, genero, telefone, endereco });
+  async cadastrar(nome, email, senha) {
+    // dt_nascimento, genero, telefone, endereco
+    const usuario = await Paciente.create({ nome, email, senha});
     console.log('Usuário criado:', usuario.toJSON());
   }
 

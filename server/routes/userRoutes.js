@@ -4,10 +4,10 @@ import pacienteController from '../controllers/PacienteController.js';
 const router = express.Router();
 
 // Definindo as rotas
-router.post('/paciente/', async (req, res) => {
-  const { nome, email } = req.body;
+router.put('/paciente/', async (req, res) => {
+  const { nome, email, senha } = req.body;
   try {
-    await pacienteController.criar(nome, email);
+    await pacienteController.cadastrar(nome, email, senha);
     res.status(201).json({ mensagem: 'Usuário criado com sucesso!' });
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao criar usuário', detalhe: err.message });

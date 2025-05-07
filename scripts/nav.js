@@ -117,7 +117,7 @@ function desktopNav(){
     // se usuario não estiver logado
     } else { 
       // se o usuario estiver no login
-      if (this.window.location.href.includes('login')){
+      if (this.window.location.href.includes('login', '') || this.window.location.href.includes('cadastro')){
         navB += ` <div></div><div></div>`
       } else {
         // usuario deslogado e fora do login
@@ -156,7 +156,7 @@ function desktopNav(){
       let sideBarItems = ''
 
       if (usuario !== null) {
-        if (href.includes('login')) {
+        if (href.includes('login') || href.includes('cadastro')) {
           sideBarItems = `
           <a class="nav-item nav-link" href="${str}/sobrenos.html"> Sobre nós</a>
           <a class="nav-item nav-link" href="${str}/artigos.html"> Artigos</a>
