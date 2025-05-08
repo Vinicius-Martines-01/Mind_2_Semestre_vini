@@ -266,13 +266,10 @@ function desktopNav(){
     console.log(this.window.location.href)
     own.children[1].innerHTML = `<div class=nav-login-drop-wrapper>
                                     <div class="nav-login-drop">
-                                        <a href="${str}/login.html">
-                                            <button type="button" onclick="setUserType(0)" class="nav-drop-btn">Paciente</button>
-                                        </a>
-                                        <a href="${str}/login.html">
-                                            <button type="button" onclick="setUserType(1)" class="nav-drop-btn">Psicólogo</button>
-                                            <button type="button" onclick="setUserType(2)" class="nav-drop-btn">Voluntário</button>
-                                        </a>
+                                            <button type="button" onclick="setUserType(0, '${str}')" class="nav-drop-btn">Paciente</button>
+                                            <button type="button" onclick="setUserType(1, '${str}')" class="nav-drop-btn">Psicólogo</button>
+                                            <button type="button" onclick="setUserType(2, '${str}')" class="nav-drop-btn">Voluntário</button>
+
                                     </div>`
   
   }

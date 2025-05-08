@@ -1,5 +1,5 @@
 import Paciente from '../db/models/Paciente.js'; 
-
+import { getPacientes } from '../../scripts/login_app.js';
 class PacienteController {
   async cadastrar(nome, email, senha) {
     // dt_nascimento, genero, telefone, endereco
@@ -33,13 +33,7 @@ class PacienteController {
 
   // CRIA OS USUARIOS PADRÕES / AKA SNOOPY SUPREMACY
   async criarPacienteDefault() {
-    const ds = [
-      { login: "gabriel", password: "1234", email: "gabriel@gmail.com", img_perfil: '' },
-      { login: "amanda", password: "12345@", email: "amanda@gmail.com", img_perfil: 'amanda.png' },
-      { login: "ladygaga", password: "123456@", email: "ladygaga@gmail.com", img_perfil: '' },
-      { login: "snoopy", password: "1950", email: "snoopy@gmail.com", img_perfil: 'snoopy.png' },
-      { login: "scooby", password: "1950", email: "scooby@gmail.com", img_perfil: 'scooby.png' }
-    ];
+    const ds = getPacientes() 
 
     try {
       // deleta os pacientes antigos caso existam
