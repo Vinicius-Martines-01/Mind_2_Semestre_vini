@@ -76,28 +76,34 @@ function cadastrar(event) {
     let nome = document.querySelector("#nome0").value
     let email = document.querySelector("#email0").value
     let senha = document.querySelector("#password0").value
-
+    let senha1 = document.querySelector("#password1").value
     // faz o cadastro online
     if (window.location.hostname.includes("vercel")){
         var usuarios = JSON.parse(localStorage.getItem("usersHere"))
-
-        if (nome !== '' && senha !== '' && email !== ''){
-            let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
-            usuarios.push(user)
+        if (senha == senha1 && senha !== ''){
+            if (nome !== '' && senha !== '' && email !== ''){
+                let user = { id: Date.now(), login: nome, password: senha, email:email, psi: false, img_perfil:''}
+                usuarios.push(user)
+                
+                localStorage.setItem("usersHere", JSON.stringify(usuarios))
+                alert('Conta Registrada!')
+                window.location.href =  window.location.href.replace("cadastro.html","login.html")
             
-            localStorage.setItem("usersHere", JSON.stringify(usuarios))
-            alert('Conta Registrada!')
-            window.location.href =  window.location.href.replace("cadastro.html","login.html")
-        
+            }
+        } else {
+            alert("As senhas não combinam")
         }
     } else { // faz o cadastro offline usando o pc como servidor
         (async () => {
             try {
+                if (senha == senha1 && senha !== ''){
+                    if (nome !== '' && senha !== '' && email !== ''){
                 const response = await fetch(`http://localhost:${PORT}/api/paciente`, {
                   method: 'PUT',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ nome, email, senha })
                 });
+
           
                 const data = await response.json();
           
@@ -107,9 +113,14 @@ function cadastrar(event) {
                 } else {
                   console.log(`Erro: ${data.erro}`);
                 }
+                }
+                } else {
+                    alert("As senhas não combinam")
+                }
               } catch (error) {
                 console.log(`Erro na requisição: ${error.message}`);
               }
+            
         })();
     }
   
