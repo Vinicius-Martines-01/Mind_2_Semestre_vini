@@ -183,12 +183,14 @@ function getUserTypeColor(){
     }
 }
 
-window.local = local; 
-window.doLogin = doLogin; 
-window.cadastrar = cadastrar; 
-window.changePerfilData = changePerfilData;
-window.logout = logout;
-window.setTerapia = setTerapia;
-window.getTerapia = getTerapia;
-window.setUserType = setUserType;
-window.getUserTypeColor = getUserTypeColor;
+if (typeof window !== 'undefined') {
+    window.local = local; 
+    window.doLogin = doLogin; 
+    window.cadastrar = cadastrar; 
+    window.changePerfilData = changePerfilData;
+    window.logout = logout;
+    window.setTerapia = setTerapia;
+    window.getTerapia = getTerapia;
+    window.setUserType = setUserType;
+    window.getUserTypeColor = getUserTypeColor;
+} 
