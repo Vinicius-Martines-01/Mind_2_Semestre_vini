@@ -1,5 +1,5 @@
 import Paciente from '../db/models/Paciente.js'; 
-import { getPacientes } from '../db/models/defaultUsers.js';
+import { getPacientes } from '../../scripts/login_app.js';
 class PacienteController {
   async cadastrar(nome, email, senha) {
     // dt_nascimento, genero, telefone, endereco
