@@ -140,8 +140,9 @@ function desktopNav(){
     navRightButton.innerHTML = `
         <div></div><div></div>
         <button type="button"  class="nav-btn" onclick="activateSideBar()"
-        style="background-image: url('./img/cardapio.png');
-        margin-right: 20%;">
+        style="background-image: url('../img/cardapio.png');
+        margin-right: 20%;
+        display:block;">
         </button>`
 
       // guarda a string se tiver pages
@@ -194,7 +195,7 @@ function desktopNav(){
       document.querySelector('#sideNav').innerHTML = `
       <div class="nav-side-bar">
           <button type="button"  class="nav-btn nav-btn-box" onclick="deactivateSideBar()"
-          style="background-image: url('./img/cancel.png');
+          style="background-image: url('../img/cancel.png');
           margin-right: 20%;">
           </button>
             <nav class="nav-side-bar-items">

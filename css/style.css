@@ -116,7 +116,6 @@ footer form{
     outline: none;
     color: white;
     background-color: #1C5841;
-    transition: background-color 0.5s;
     cursor: pointer;
 
 }
@@ -127,10 +126,9 @@ footer form{
 }
 
 
-.nav-btn-login.hover-state{
-    background-color: #58ffc2;
-    transition: background-color 0.1s;
-    outline: 2px solid rgb(0, 156, 0);
+.nav-btn-login:hover{
+    background-color: #00AD6E;
+    outline: 2px solid ;
 }
 
 .nav-login-drop {
@@ -140,7 +138,6 @@ footer form{
     margin: 0.75em;
     margin-top: 0.5em;
     padding: 0.5em;
-
     width: inherit;
     min-height: fit-content;
     border-radius: 0.4em;

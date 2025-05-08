@@ -181,18 +181,23 @@ function setUserType(val, pagina){
 }
 
 function getUserTypeColor(){
-    const userType = JSON.parse(sessionStorage.getItem("userType"))
-    
+    const userType = JSON.parse(sessionStorage.getItem("userType"));
+    const loginContainer = document.querySelector(".container-login");
+    const loginBody = document.querySelector(".container-login-body");
     console.log(userType)
+    //muda a cor da div #tops na pagina login
     const tableColors = ['#F8A764', '#1C5841','#00AD6E']
 
-    if (userType !== null){
-        const loginContainer = document.querySelector(".container-login");
-        const loginBody = document.querySelector(".container-login-body");
-
-        loginContainer.style.backgroundColor = tableColors[userType];
-        loginBody.style.boxShadow  = `inset 0px 14px 0px ${tableColors[userType]}`
+    if (userType !== null && loginContainer && loginBody) {
+        if (window.innerWidth < 500) {
+            loginContainer.style.background = "none";
+            loginBody.style.boxShadow = "none";
+        } else {
+            loginContainer.style.backgroundColor = tableColors[userType];
+            loginBody.style.boxShadow = `inset 0px 14px 0px ${tableColors[userType]}`;
+        }
     }
+    
 }
 
 // exporta todos as funções se estiver no navegador
