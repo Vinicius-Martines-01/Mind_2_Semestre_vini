@@ -1,6 +1,6 @@
 const PORT = 8080; // port principal
 
-// os pacientes
+// os pacientes o vetor mais top das galaxias (só porque tem o snoopy)
 export function getPacientes(){
     const ds = [ 
         { id: 1, login: "gabriel", password: "1234", email: "gabriel@gmail.com", img_perfil:''},//[0]
@@ -13,10 +13,9 @@ export function getPacientes(){
 }
 
 function local(){
-    if (window.location.hostname.includes("vercel")){
     // quando não tiver o vetor usuario e o site estiver offline
+    if (window.location.hostname.includes("vercel")){
         if (localStorage.getItem('usersHere') === null) {
-
             const ds = getPacientes()
             let n = JSON.stringify(ds);
             localStorage.setItem("usersHere", n);   
@@ -103,6 +102,7 @@ function cadastrar(event) {
                 const data = await response.json();
           
                 if (response.ok) {
+                    alert('Conta Registrada!')
                     window.location.href = window.location.href.replace("cadastro.html","login.html")
                 } else {
                   console.log(`Erro: ${data.erro}`);
@@ -162,10 +162,11 @@ function getTerapia(){
 
 }
   
-function setUserType(val){
-    n = JSON.stringify(val);
+function setUserType(val, pagina){
+    const n = JSON.stringify(val);
     sessionStorage.setItem("userType", n)
-
+    // manda para  o login    
+    window.location.href = `${pagina}/login.html`
 }
 
 function getUserTypeColor(){
@@ -183,6 +184,7 @@ function getUserTypeColor(){
     }
 }
 
+// exporta todos as funções se estiver no navegador
 if (typeof window !== 'undefined') {
     window.local = local; 
     window.doLogin = doLogin; 
