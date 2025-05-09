@@ -1,0 +1,46 @@
+.container-section{
+    display: flex;
+    gap: 10rem;
+}
+.container-img{
+    height: 250px;
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-left: 7rem;
+    gap: 7rem;
+}
+.imgEdit{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid black;
+}  
+.container-inputs{
+    width: 70%;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+}
+.container-input-1{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.5rem;
+}
+.container-input-2{
+    margin-top: 1.5rem ;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.5rem;
+}
+.container-atualizar{
+    margin: 1.5rem;
+    display: flex;
+    justify-content: end;
+}
+.container-deletar{
+    width: 100%;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
