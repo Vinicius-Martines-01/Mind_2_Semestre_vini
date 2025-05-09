@@ -1,14 +1,18 @@
+section{
+    margin: 1.5rem;
+}
 .container-section{
     display: flex;
-    gap: 10rem;
+    gap: 3rem;
+    justify-content: space-between;
 }
 .container-img{
     height: 250px;
     display: flex;
     align-items: center;
     margin-top: 1.5rem;
-    margin-left: 7rem;
-    gap: 7rem;
+    margin-left: 1.5rem;
+    gap: 3rem;
 }
 .imgEdit{
     width: 140px;
@@ -17,7 +21,7 @@
     border: 1px solid black;
 }  
 .container-inputs{
-    width: 70%;
+    width: 100%;
     margin-top: 1.5rem;
     margin-right: 1.5rem;
 }
@@ -43,4 +47,27 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+}
+.btn-deletar{
+    width: 200px;
+}
+@media(max-width:800px){
+    .container-section{
+        flex-direction: column;
+        margin: 1.5rem;
+    }
+    .container-img{
+        margin: auto;
+    }
+    .container-input-1{
+        grid-template-columns: auto;
+    }
+    .container-atualizar{
+        justify-content: center;
+    }
+    .container-deletar{
+        flex-direction: column;
+        margin: 1.5rem;
+        align-items: center;
+    }
 }
