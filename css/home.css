@@ -1,89 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+:root{
+    --color-01:#F8A764;
+    --color-01-hover:#f59444;
+    --color-02:#F5E0A5;
+    --color-03:#1C5841;
+    --color-04:#00AD6E;
+    --color-05:#D46240;
+    --font-01:#FFFFFF;
+    --font-02:#16120D;
+    --btn-alerta:#8D2000;
+}
+/* Search bar section -------------- */
+.grid-container{
+    margin:20px 30px;
+}
+.grid-psi, .search-boxes{
+    display: flex;
+    width:100%;
+}
+.grid-psi{
+    padding-bottom:30px;
+    border-bottom: 1px solid #000;
+}
+.search-boxes{
+    flex-direction: row;
+    justify-items:space-between;
+    gap:20px;
+    position: relative;
+}
+.search-boxes input{
+    width:100%;
+    padding:0.5rem 1rem;
+    border-radius:10px;
+    padding-right: 2.5rem;
+}
+.btn-searchBar img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
+    padding:.6rem;
+    background-color: var(--color-03);
+    border-radius:10px;
+    cursor: pointer;
+}
+.btn-searchBar{
+    border:none;
+}
 
-#bg-main-2{
-    background: url('../img/img_inicial.jpg');
-    background-repeat: no-repeat; 
-    width: 100%;
-    height: inherit;
-    background-size: 150%;
-    background-position: center;
-    background-attachment: fixed;
-}
-.row{
-    justify-content: center;
-}
+/* Filtro --------------------------- */
 .hm-btn-buscar {
     position: absolute;
-    font-family: 'chillax';
     font-size: medium;
     font-weight: bold;
     padding: 0.5em 1em;
-    margin: 0.25em;
     border-radius: 0.4em;
     justify-self: center;
     border: none;
-    outline: none;
-    color: white;
+    color: var(--font-01);
     width: 100%;
     background-color: #1C5841;
     transition: background-color 0.1s;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-
 }
-
 .hm-btn-buscar:hover {
-    background-color: #58ffc2;
+    background-color: var(--color-04);
     transition: background-color 0.25s;
 }
-
-
-.fix_buscar {
-    position: absolute;
-    width: 100%;
+.row{
+    justify-content: center;
 }
-.hm-input-label{
-    position: relative;
-    font-family: 'chillax';
-    padding-top: 0.5em;
-    padding-left: 1.5em;
-    font-size: larger;
-    line-height: -50px;
-    color: #1C5841;
-    transition: color 0.2s;
-}
-
-input{
-    position: absolute;
-    width: 100%;
-    font-family: 'chillax';
-    font-size: medium;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    margin: 0.25em;
-    border-radius: 0.4em;
-    outline: none;
-    border: 2px solid #1C5841;
-    transition: border 0.75;
-    background: transparent;
-    font-size: 2.2em;
-    z-index: 1111;
-}
-
-input:focus, input:valid{   
-    border: 3px solid #58ffc2;
-    transition: border 0.05s;
-}
-
-input:focus + .hm-input-label,
-input:valid + .hm-input-label{ 
-    color: #58ffc2;
-    transition: color 0.05s;
-}
-
 .hm-btn-ver {
     position: relative;
-    font-family: 'chillax';
+    font-family: 'poppins';
     font-size: medium;
     font-weight: bold;
     padding: 0.5em 2.5em;
@@ -110,7 +105,7 @@ input:valid + .hm-input-label{
 
 .hm-psi-stats {
     position: relative;
-    font-family: 'chillax';
+    font-family: 'poppins';
     font-size: medium;
     padding: 0.2em 0.2em;
     margin: 0.2em;
@@ -127,8 +122,6 @@ input:valid + .hm-input-label{
     transition: transform 0.1s;
     box-shadow: 0px 1px 2px #144416;
 }
-
-
 .hm-psi-stats:hover{   
     box-shadow: 0px 2px 4px #3b443e;
     transform: translate(1px, -1px) scale(1.02);
@@ -136,19 +129,20 @@ input:valid + .hm-input-label{
     transition: box-shadow 0.1s
     
 }
-
-
 .checkbox{
     position: absolute;
     width: 100%;
     background: #1C5841;
     display: flex;
     flex-direction: column;
-    top: 78%;
+    top: 80%;
+    left:4.8%;
     margin: 0.25em;
     gap: 10px;
     display: none;
-    
+    padding:10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 #filtro-checkbox {
     transform: scaleY(0);
@@ -196,26 +190,13 @@ input:valid + .hm-input-label{
     padding: 0.5rem;
     margin: 0;
     color: #ffffff;
-    font-family: 'chillax';
+    font-family: 'poppins';
     width: 100%;
     cursor: pointer;
 
 }
-.grid-psi{
-    display: flex;
-    margin-top: 3%;
-    padding-bottom: 25px; 
-    height: fit-content;
-    flex-wrap: wrap;
 
-}
-.container-psi{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-}
-
+/* Cards de psicologos ----------------- */
 .card-psi{
     display: block;
     align-self: center;
@@ -250,7 +231,7 @@ input:valid + .hm-input-label{
     width: 100%;
     grid-template-columns: 50% 50%;
     padding-top: 1em;
-    font-family: 'chillax';
+    font-family: 'poppins';
     font-weight: 400;
     font-size: 16px;
 }

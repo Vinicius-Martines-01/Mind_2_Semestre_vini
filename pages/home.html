@@ -43,30 +43,15 @@
             </div>
     </header>
 
-    
-   
     <section>
-        <div style="height: 400px; width: 100%; background-color: #ffffff;">
-            <div id="bg-main-2"></div>
-        </div>
-    </section>
-    </section>
-    <section>
-        <div class="grid-container container-gen" style="height: fit-content;">     
-            <div class="container-fluid" style="margin: 4em; ">  
-                <div class="grid-psi" style="display: flex;">
-                    <div class="col col-sm-1"></div>
-                    <div class="col col-sm-7">
-                        <div class="fix_buscar">
+        <div class="grid-container container-gen">     
+            <div class="container-fluid">  
+                <div class="grid-psi">
+                        <div class="search-boxes">
                             <input type="text" required id="search-input" placeholder="Pesquisar">
-                            <div class="hm-input-label"></div>
+                            <button class="btn-searchBar"><img src="../img/magnifying-glass-solid.png" alt=""></button>
                         </div>
-                    </div>
-                    <div class="col col-sm-1">
-                        <button type="button"  class="nav-btn"
-                        style="background-image: url('/img/magnifying-glass-solid.png');">
-                    </button>  
-                    </div>
+
                     <div class="col col-sm-2">
                         <button type="button" class="hm-btn-buscar" onclick="AbrirFiltro()">Filtro <img src="/img/seta-filtro.png" class="seta-filtro" alt="" id="seta-checkbox"></button>
                         <div class="checkbox" id="filtro-checkbox">
@@ -94,8 +79,11 @@
                                 <input type="checkbox" name="1" data-speciality="Burnout" id="checkbox-6">
                                 <label class="titulo-checkbox" for="checkbox-6">Burnout</label>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="row">
                     <div class="grid-psi container-gen">
                         <div class="row" style="display: flex; justify-content: center;">
@@ -373,17 +361,5 @@
     </footer>
 
     <script src="/scripts/pesquisa.js"></script>
-    <script type="text/javascript" defer>
-        const bgImage = document.getElementById('bg-main-2');
-
-        document.body.addEventListener('scroll', isScroll)
-
-        function isScroll(){
-            const yPos = document.body.scrollTop;
-            bgImage.style.backgroundSize = 150 - +yPos/15+'%';
-            bgImage.style.opacity = 1 - +yPos/500;
-        }
-
-    </script>
 </body>
 </html>

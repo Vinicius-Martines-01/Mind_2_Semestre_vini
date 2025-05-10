@@ -31,20 +31,22 @@
             </div>
     </header>
     <section>
+        <h1>Configurações</h1>
         <div class="container-section">
             <div class="container-img">
                 <div>
-                    <img src="" alt="" class="imgEdit">
+                    <img id="imagePreview" src="" alt="" class="imgEdit">
                 </div>
                 <div>
-                    <button>Mudar foto</button>
+                    <input id="file-image" type="file" accept="image/*">
+                    <label class="btns" id="file-image" for="file-image">Mudar Foto</label>
                 </div>
             </div>
             <div class="container-inputs">
                 <form action="">
                     <div class="container-input-1">
                         <div class="input-e-span">
-                            <span class="login-titulo"><label>Nome</label></span>
+                            <span class="login-titulo"><label for="nomeEdit">Nome</label></span>
                             <input id="nomeEdit" type="text" class="form-control" placeholder="Nome">    
                         </div>
                         
@@ -65,13 +67,25 @@
                         
                         <div class="input-e-span">
                             <span class="login-titulo"><label>Local</label></span>
-                            <input id="localEdit" type="text" class="form-control" placeholder="Local">
-                             
+                            <select id="localEdit" type="text" class="form-control">
+                                <option value="">São Paulo</option>
+                                <option value="">Diadema</option>
+                                <option value="">São Bernardo</option>
+                                <option value="">Santo André</option>
+                                <option value="">Santo Amaro</option>
+                                <option value="">Jabaquara</option>
+                                <option value="">Osasco</option>
+                                <option value="">Guarulhos</option>
+                            </select>
                         </div>
                         
                         <div class="input-e-span">
-                            <span class="login-titulo"><label>Genero</label></span>
-                            <input id="generoEdit" type="text" class="form-control" placeholder="Genero">
+                            <span class="login-titulo"><label>Sexo</label></span>
+                            <select id="generoEdit" type="text" class="form-control">
+                                <option value="">Feminino</option>
+                                <option value="">Masculino</option>
+                                <option value="">Outro</option>
+                            </select>
                         </div>
                     </div>
                     <div class="container-input-2">
@@ -83,23 +97,23 @@
                             <span class="login-titulo"><label>Senha</label></span>
                             <input id="senhaEdit" type="text" class="form-control" placeholder="Senha">    
                         </div>
-                    </div>    
+                    </div>
+                    <div class="container-atualizar">
+                        <button class="btns">Atualizar perfil</button>
+                    </div>  
                 </form>
-                <div class="container-atualizar">
-                    <button>Atualizar perfil</button>
-                </div>
-                
             </div>
-            
         </div>
         <div class="container-deletar">
             <span>Uma vez deletada sua conta, não será possível recupera-la. Tenha certeza!</span>
-            <button class="btn-deletar">Deletar conta</button>
+            <button class="btn-deletar btns">Deletar conta</button>
         </div>
         
     </section>
     <footer id="mainFooter">
     </footer>
     
+
+    <script src="../scripts/configuraçoes.js"></script>
 </body>
 </html>
