@@ -115,15 +115,18 @@ input[type="file"]{
    align-items: center;
    box-shadow: 10px 10px 18px -5px var(--font-02);
    top: 50%;
-   translate: 0% -50%;
+   left: 50%;
+   translate: -50% -70%;
    text-align: center;
    gap: 10px;
 }
+
 .btn-cancelar-pop-up-deletar{
     position: absolute;
     width: 100%;
     right: 0.5rem;
     top: 0.5rem;
+    background: none;
 }
 .btn-cancelar-pop-up-deletar:hover{
     cursor: pointer;
