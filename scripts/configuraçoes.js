@@ -7,3 +7,16 @@ btn_imagePreview.addEventListener('change', (event) => {
         imagePreview.src = imageURL;
     }
 })
+
+// pop-up-deletar----------------------------------
+
+const abrir_pop_up = document.getElementById("btn-abrir-pop-up");
+const pop_up_deletar = document.getElementById("pop-up-deletar");
+const fechar_pop_up = document.getElementById("btn-fechar-pop-up");
+
+abrir_pop_up.addEventListener("click", () => {
+    pop_up_deletar.style.display = "flex";
+});
+fechar_pop_up.addEventListener("click", () => {
+    pop_up_deletar.style.display = "none";
+})
