@@ -113,7 +113,7 @@ input[type="file"]{
    flex-direction: column;
    border-radius: 34px;
    align-items: center;
-   box-shadow: 10px 10px 18px -5px var(--font-02);
+   box-shadow: 0px 0px 10px var(--font-02);
    top: 50%;
    left: 50%;
    translate: -50% -70%;
