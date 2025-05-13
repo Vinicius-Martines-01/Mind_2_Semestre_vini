@@ -1,0 +1,10 @@
+// os pacientes o vetor mais top das galaxias (só porque tem o snoopy)
+export function getPacientes(){
+    const ds = [ 
+        { id: 1, login: "snoopy", password: "1950", email: "snoopy@gmail.com", nome:"Snoopy", sobrenome:"", 
+            genero:"Masculino", dt_nascimento:'1969-09-13', telefone:"(79) 2337-2615", local:"São Paulo", img_perfil:'snoopy.png'},
+        { id: 2, login: "scooby", password: "1950", email: "scooby@gmail.com", nome:"Scoobert", sobrenome:"Cornelius Doo", 
+            genero:"Masculino", dt_nascimento:'1950-10-04', telefone:"(61) 3070-0787", local:"São Paulo", img_perfil:'snoopy.png', img_perfil: 'scooby.png' },
+    ]
+    return ds
+}

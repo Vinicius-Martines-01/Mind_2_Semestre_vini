@@ -21,7 +21,7 @@ checkPageWidth(widthMatch);
 
 // check se precisa de links pela largura da pagina
 function checkNavLinks(check){
-  usuario = JSON.parse(sessionStorage.getItem('user'))
+  usuario = JSON.parse(sessionStorage.getItem('mind_user'))
   
     let navLinks = document.querySelector('.cont-nav-center')
     let mindHome = document.querySelector('#mindHome')
@@ -86,7 +86,7 @@ function checkNavLinks(check){
 }
 function desktopNav(){
     const navButtons = document.querySelector('.nav-right-buttons')
-    usuario = JSON.parse(sessionStorage.getItem('user'))
+    usuario = JSON.parse(sessionStorage.getItem('mind_user'))
   
     let navB = ''
 
@@ -135,7 +135,7 @@ function desktopNav(){
   function mobileNav(){
 
     let navRightButton = document.querySelector('.nav-right-buttons')
-    usuario = JSON.parse(sessionStorage.getItem('user'))
+    usuario = JSON.parse(sessionStorage.getItem('mind_user'))
     // cria o o btn que abre o side bar
     navRightButton.innerHTML = `
         <div></div><div></div>

@@ -38,13 +38,14 @@
                     <img id="imagePreview" src="" alt="" class="imgEdit">
                 </div>
                 <div>
-                    <input id="file-image" type="file" accept="image/*">
-                    <label class="btns" id="file-image" for="file-image">Mudar Foto</label>
+                    <input id="file-image" type="file" accept="image/*" required>
+                    <label class="btns" for="file-image">Mudar Foto</label>
                 </div>
             </div>
             <div class="container-inputs">
-                <form action="">
+                <form id="formAtualizar" action="">
                     <div class="container-input-1">
+
                         <div class="input-e-span">
                             <span class="login-titulo"><label for="nomeEdit">Nome</label></span>
                             <input id="nomeEdit" type="text" class="form-control" placeholder="Nome">    
@@ -56,8 +57,8 @@
                         </div>
                         
                         <div class="input-e-span">
-                            <span class="login-titulo"><label>Idade</label></span>
-                            <input id="idadeEdit" type="text" class="form-control" placeholder="Idade">    
+                            <span class="login-titulo"><label>Data de nascimento</label></span>
+                            <input id="nascimentoEdit" type="text" class="form-control" placeholder="Data de nascimento">    
                         </div>
         
                         <div class="input-e-span">
@@ -68,38 +69,45 @@
                         <div class="input-e-span">
                             <span class="login-titulo"><label>Local</label></span>
                             <select id="localEdit" type="text" class="form-control">
-                                <option value="">São Paulo</option>
-                                <option value="">Diadema</option>
-                                <option value="">São Bernardo</option>
-                                <option value="">Santo André</option>
-                                <option value="">Santo Amaro</option>
-                                <option value="">Jabaquara</option>
-                                <option value="">Osasco</option>
-                                <option value="">Guarulhos</option>
+                                <option value="" selected disabled hidden>Escolha a Cidade</option>
+                                <option value="São Paulo">São Paulo</option>
+                                <option value="Diadema">Diadema</option>
+                                <option value="São Bernardo">São Bernardo</option>
+                                <option value="Santo André">Santo André</option>
+                                <option value="Santo Amaro">Santo Amaro</option>
+                                <option value="Jabaquara">Jabaquara</option>
+                                <option value="Osasco">Osasco</option>
+                                <option value="Guarulhos">Guarulhos</option>
                             </select>
                         </div>
                         
                         <div class="input-e-span">
                             <span class="login-titulo"><label>Sexo</label></span>
                             <select id="generoEdit" type="text" class="form-control">
-                                <option value="">Feminino</option>
-                                <option value="">Masculino</option>
-                                <option value="">Outro</option>
+                                <option value="" selected disabled hidden>Escolha o gênero</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Outro">Outro</option>
                             </select>
                         </div>
                     </div>
                     <div class="container-input-2">
+                        <div class="input-e-span">
+                            <span class="login-titulo"><label>Nome do login</label></span>
+                            <input id="loginEdit" type="text" class="form-control" placeholder="Login">
+                        </div>
                         <div class="input-e-span">
                             <span class="login-titulo"><label>E-mail</label></span>
                             <input id="emailEdit" type="text" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="input-e-span">
                             <span class="login-titulo"><label>Senha</label></span>
-                            <input id="senhaEdit" type="text" class="form-control" placeholder="Senha">    
+                            <input id="senhaEdit" type="password" class="form-control" placeholder="Senha">    
+
                         </div>
                     </div>
                     <div class="container-atualizar">
-                        <button class="btns">Atualizar perfil</button>
+                        <button id="btnAtualizarPerfil" class="btns">Atualizar perfil</button>
                     </div>  
                 </form>
             </div>
@@ -123,5 +131,20 @@
     
 
     <script src="../scripts/configuraçoes.js"></script>
+
+  <script>
+    // faz a senha ficar visivel
+
+    const senhaInput = document.getElementById("senhaEdit");
+
+    senhaInput.addEventListener("focus", () => {
+    senhaInput.type = "text"; // Mostra a senha
+    });
+
+    senhaInput.addEventListener("blur", () => {
+    senhaInput.type = "password"; // Esconde a senha 
+    });
+    
+  </script>
 </body>
 </html>

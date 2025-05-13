@@ -20,7 +20,7 @@
 
 
     <script>
-        usuario = JSON.parse(sessionStorage.getItem('user'))
+        usuario = JSON.parse(sessionStorage.getItem('mind_user'))
         if (usuario === null) {
             window.location.href =  window.location.href.replace("perfil-paciente.html","") + "login.html"
         }
@@ -62,7 +62,7 @@
                     <h2 id="perfilNome">
                         Nome Sobrenome
                     </h2>
-                    <p>Idade:   </p>
+                    <p id="perfilIdade">Idade:   </p>
                     <p>Local:   </p>
                     <p>Contatos:</p>
                     <div style="display: flex; align-items: center; padding-bottom:20px;">

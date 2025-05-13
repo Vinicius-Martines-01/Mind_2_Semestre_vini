@@ -1,44 +1,22 @@
-import { DataTypes } from "sequelize";
+import sequelize from '../database.js';
+import { Sequelize, DataTypes } from 'sequelize';
 
-export default (sequelize) => {
-  const Psicologo = sequelize.define("Psicologo", {
-    nome: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    senha: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    crp: { // Conselho Regional de Psicologia
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    especialidade: {
-      type: DataTypes.STRING,
-      allowNull: true, // Originalmente era false, mas pode ser opcional
-    },
-    telefone: {
-      type: DataTypes.STRING, // Alterado de INTEGER para STRING para acomodar formatos como (XX) XXXXX-XXXX
-      allowNull: true,     // Originalmente era false
-    },
-    endereco: { // Campo adicionado para consistência, se necessário
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-  }, {
-    timestamps: true,
-    tableName: "psicologos", // Mantendo o nome da tabela original se existir
-  });
+class Psicologo extends Sequelize.Model {}
 
-  return Psicologo;
-};
+// NOME / EMAIL / SENHA / CRP / ESPECIALIDADE / TELEFONE / ENDEREÇO
+Psicologo.init({
+  nome: { type: DataTypes.STRING, allowNull: false },
+  email: { type: DataTypes.STRING, allowNull: false, unique: true, validate: { isEmail: true } },
+  senha: {type: DataTypes.STRING, allowNull: false },
+  crp: { type: DataTypes.STRING, allowNull: false, unique: true },
+  especialidade: { type: DataTypes.STRING, allowNull: true },
+  telefone: { type: DataTypes.STRING, allowNull: true },
+  endereco: { type: DataTypes.STRING, allowNull: true },
+}, {
+sequelize,
+modelName: 'Psicologos',
+tableName: 'psicologos',
+timestamps: true,
+});
+
+  export default Psicologo;

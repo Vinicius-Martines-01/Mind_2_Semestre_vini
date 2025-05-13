@@ -1,21 +1,10 @@
 const PORT = 8080; // port principal
-
-// os pacientes o vetor mais top das galaxias (só porque tem o snoopy)
-export function getPacientes(){
-    const ds = [ 
-        { id: 1, login: "gabriel", password: "1234", email: "gabriel@gmail.com", img_perfil:''},//[0]
-        { id: 2, login: "amanda", password: "12345@", email: "amanda@gmail.com", img_perfil:'amanda.png'},//[1]
-        { id: 3, login: "ladygaga", password: "123456@", email: "ladygaga@gmail.com", img_perfil:''},//[2]
-        { id: 4, login: "snoopy", password: "1950", email: "snoopy@gmail.com", img_perfil:'snoopy.png'},
-        { id: 5, login: "scooby", password: "1950", email: "scooby@gmail.com", img_perfil: 'scooby.png' },
-    ]
-    return ds
-}
+import { getPacientes } from "../server/scripts/userVectors.js";
 
 function local(){
     // quando não tiver o vetor usuario e o site estiver offline
-    if (window.location.hostname.includes("vercel")){
-        if (localStorage.getItem('usersHere') === null) {
+    if (window.location.hostname.includes("vercel")){ // "vercel"
+        if (localStorage.getItem("usersHere") === null) {
             const ds = getPacientes()
             let n = JSON.stringify(ds);
             localStorage.setItem("usersHere", n);   
@@ -38,7 +27,7 @@ function doLogin(event){
         for(let i = 0; i < usuarios.length; i++){
             if((login == usuarios[i].login || login == usuarios[i].email) && senha == usuarios[i].password){
                 let n = JSON.stringify(usuarios[i]);
-                sessionStorage.setItem("user", n)
+                sessionStorage.setItem("mind_user", n)
                 window.location.href =  window.location.href.replace("login.html", "home.html")
                 break
             }
@@ -56,7 +45,7 @@ function doLogin(event){
                 
                 if (response.ok) {
                     let n = JSON.stringify(data.user);
-                    sessionStorage.setItem("user", n)
+                    sessionStorage.setItem("mind_user", n)
                     window.location.href =  window.location.href.replace("login.html", "home.html") 
                 } else {
                     console.log(`Erro: ${data.erro}`);
@@ -130,29 +119,31 @@ function cadastrar(event) {
 function changePerfilData(){
     const name = document.querySelector('#perfilNome');
     const photo = document.querySelector('#perfilFoto');
+    const idade = document.querySelector('#perfilIdade');
 
-    usuario = JSON.parse(sessionStorage.getItem('user'))
+    usuario = JSON.parse(sessionStorage.getItem("mind_user"))
     console.log(usuario) // check if user is log
     
-    const defaultImage = '/img/perfil_.png'
+    const defaultImage = '../server/img/user/perfil_.png'
     
     if (usuario === null) {
         photo.src = defaultImage
       } else {
-        name.innerHTML = usuario.login
+        name.innerHTML = usuario.nome
         name.classList.add('perfilTex')
+        idade.innerHTML = `Idade: ${usuario.idade}`
 
         if (usuario.img_perfil === ''){
             photo.src = defaultImage
         } else {
-            photo.src = '/img/perfil_'+usuario.img_perfil; 
+            photo.src = '../server/img/user/perfil_' + usuario.img_perfil; 
         }
       }
 
 }
 
 function logout(){
-    sessionStorage.removeItem("user")
+    sessionStorage.removeItem("mind_user")
     window.location.href =  window.location.href.replace("/pages/perfil-paciente.html","")
   
 }
