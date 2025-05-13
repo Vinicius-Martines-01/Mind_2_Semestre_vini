@@ -134,6 +134,7 @@ document.getElementById('btnAtualizarPerfil').addEventListener('click', async ()
 // deleta o database 
 document.getElementById('btnADeletarPerfil').addEventListener('click', async () => {
   const usuario = JSON.parse(sessionStorage.getItem("mind_user"));
+
   try {
     const response = await fetch(`http://localhost:${PORT}/api/paciente/deletar/${usuario.id}`, {
       method: 'DELETE',
@@ -146,7 +147,6 @@ document.getElementById('btnADeletarPerfil').addEventListener('click', async () 
       // deleta o user do vetor e faz logout
       sessionStorage.removeItem("mind_user")
       window.location.href =  window.location.href.replace("/pages/configuracoes.html","")
-    
 
     } else {
       console.log(`Erro: ${data.erro}`);

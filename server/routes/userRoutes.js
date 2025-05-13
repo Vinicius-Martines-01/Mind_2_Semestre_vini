@@ -137,7 +137,8 @@ router.put('/paciente/atualizar/:id', async (req, res) => {
     res.status(500).json({ erro: 'Erro ao atualizar usuário', detalhe: err.message });
   }
 
-  
+});
+ 
 // Deletar por ID
 router.delete('/paciente/deletar/:id', async (req, res) => {
   const { id } = req.params;
@@ -150,6 +151,6 @@ router.delete('/paciente/deletar/:id', async (req, res) => {
   }
 
 });
-});
+
 
 export default router;
