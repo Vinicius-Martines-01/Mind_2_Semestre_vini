@@ -17,6 +17,10 @@
     "db:server": "node server/server.js",
     "seed:paciente": "node server/scripts/createDefaultUsers.js",
     "paciente": "node server/scripts/createDefaultUsers.js",
-    "db:paciente": "node server/scripts/createDefaultUsers.js"
+    "db:paciente": "node server/scripts/createDefaultUsers.js",
+
+    "db:drop": "node server/scripts/dropDatabase.js",
+    "drop": "node server/scripts/dropDatabase.js",
+    "break": "node server/scripts/dropDatabase.js"
   }
 }

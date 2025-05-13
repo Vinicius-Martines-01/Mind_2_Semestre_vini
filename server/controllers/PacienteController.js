@@ -82,5 +82,12 @@ class PacienteController {
     return paciente ? paciente.toJSON() : null;
   }
 
+  // deletar por id
+  async deletar(paciente_id) {
+    await Paciente.destroy({ where: { id: paciente_id } });
+    console.log('Usuário deletado.');
+  }
+
+
 }
 export default new PacienteController();

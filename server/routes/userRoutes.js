@@ -123,8 +123,10 @@ router.put('/paciente/atualizar/:id', async (req, res) => {
 
   if (dt_nascimento) {
     console.log(dt_nascimento)
-    const [ano, mes, dia] = dt_nascimento.split('/');
+    const [dia, mes, ano] = dt_nascimento.split('/');
     camposAtualizados.dt_nascimento = `${ano}-${mes.padStart(2, '0')}-${dia.padStart(2, '0')}`;
+
+    console.log(camposAtualizados.dt_nascimento)
   }
 
 
@@ -134,6 +136,20 @@ router.put('/paciente/atualizar/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao atualizar usuário', detalhe: err.message });
   }
+
+  
+// Deletar por ID
+router.delete('/paciente/deletar/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await pacienteController.deletar(id);
+    res.json({ mensagem: 'Usuário deletado com sucesso!' });
+  } catch (err) {
+    res.status(500).json({ erro: 'Erro ao deletar usuário', detalhe: err.message });
+  }
+
+});
 });
 
 export default router;
