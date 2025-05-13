@@ -15,7 +15,8 @@
     <script>
         usuario = JSON.parse(sessionStorage.getItem('user'))
         if (usuario === null) {
-            window.location.href =  window.location.href.replace("stream-terapia.html","") + "login.html"
+            return
+        //    window.location.href =  window.location.href.replace("stream-terapia.html","") + "login.html"
         }
     </script>
 
