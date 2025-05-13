@@ -87,7 +87,6 @@ document.getElementById('btnAtualizarPerfil').addEventListener('click', async ()
   const email = document.getElementById('emailEdit').value;
   const senha = document.getElementById('senhaEdit').value;
 
-  console.log('aqui:', endereco, genero)
 
   try {
     const response = await fetch(`http://localhost:${PORT}/api/paciente/atualizar/${usuario.id}`, {
@@ -108,6 +107,7 @@ document.getElementById('btnAtualizarPerfil').addEventListener('click', async ()
           if (response.ok) {
               let n = JSON.stringify(data.user);
               sessionStorage.setItem("mind_user", n)
+              window.location.reload(true)
           } else {
               console.log(`Erro: ${data.erro}`);
           }
@@ -130,6 +130,32 @@ document.getElementById('btnAtualizarPerfil').addEventListener('click', async ()
 
 
 });
+
+// deleta o database 
+document.getElementById('btnADeletarPerfil').addEventListener('click', async () => {
+  const usuario = JSON.parse(sessionStorage.getItem("mind_user"));
+  try {
+    const response = await fetch(`http://localhost:${PORT}/api/paciente/deletar/${usuario.id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // deleta o user do vetor e faz logout
+      sessionStorage.removeItem("mind_user")
+      window.location.href =  window.location.href.replace("/pages/configuracoes.html","")
+    
+
+    } else {
+      console.log(`Erro: ${data.erro}`);
+    }
+  } catch (error) {
+    console.log(`Erro na requisição: ${error.message}`);
+  }
+});
+
 
 // trocar Imagem
 document.getElementById('file-image').addEventListener('change', async (e) => {
