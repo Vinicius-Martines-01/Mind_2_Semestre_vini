@@ -1,39 +1,22 @@
-import { DataTypes } from 'sequelize';
+import sequelize from '../database.js';
+import { Sequelize, DataTypes } from 'sequelize';
 
-export default (sequelize) => {
-  const Voluntario = sequelize.define('Voluntario', {
-    nome: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    senha: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    area_interesse: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    disponibilidade: {
-      type: DataTypes.STRING, // Ex: 'Manhãs de segunda e quarta'
-      allowNull: true,
-    },
-    telefone: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    // Adicione outros campos relevantes para Voluntario
-  }, {
-    timestamps: true,
-  });
+class Voluntario extends Sequelize.Model {}
 
-  return Voluntario;
-};
+// NOME / EMAIL / SENHA / AREA INTERESSE / DISPONIBILIDADE / TELEFONE
+Voluntario.init({ 
+  nome: { type: DataTypes.STRING, allowNull: false },
+  email: { type: DataTypes.STRING, allowNull: false, unique: true, validate: { isEmail: true } },
+  senha: {type: DataTypes.STRING, allowNull: false },
+  area_interesse: { type: DataTypes.STRING, allowNull: true },
+  disponibilidade: { type: DataTypes.STRING, allowNull: true },
+  telefone: { type: DataTypes.STRING, allowNull: true },
+  // Adicione outros campos relevantes para Voluntario
+}, {
+  sequelize,
+  modelName: 'Voluntarios',
+  tableName: 'voluntarios',
+  timestamps: true,
+});
+
+export default Voluntario

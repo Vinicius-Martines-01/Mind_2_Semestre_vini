@@ -17,7 +17,7 @@
 
 
     <script>
-        usuario = JSON.parse(sessionStorage.getItem('user'))
+        usuario = JSON.parse(sessionStorage.getItem('mind_user'))
         if (usuario === null) {
             window.location.href =  window.location.href.replace("home.html","") + "login.html"
         }

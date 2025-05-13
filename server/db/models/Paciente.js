@@ -5,13 +5,28 @@ class Paciente extends Sequelize.Model {}
 
 // NOME / EMAIL / SENHA / DT_NASCIMENTO / GENERO / TELEFONE / ENDEREÇO / IMAGEM DE PERFIL
 Paciente.init({
-  nome: { type: DataTypes.STRING, allowNull: false },
+  login: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false },
   senha: { type: DataTypes.STRING, allowNull: false },
-  dt_nascimento: { type: DataTypes.STRING, allowNull: true },
-  genero: { type: DataTypes.STRING, allowNull: true },
-  telefone: { type: DataTypes.INTEGER, allowNull: true },
-  endereco: { type: DataTypes.STRING, allowNull: true },
+  nome: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
+  sobrenome: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
+  dt_nascimento: { type: DataTypes.DATEONLY, allowNull: true, defaultValue: '1999-01-01'},
+  idade: {
+    type: DataTypes.VIRTUAL,
+    get() {
+      const dt_nascimento = new Date(this.getDataValue('dt_nascimento'));
+      const today = new Date();
+      let idade = today.getFullYear() - dt_nascimento.getFullYear();
+      const m = today.getMonth() - dt_nascimento.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < dt_nascimento.getDate())) {
+        idade--;
+      }
+      return idade;
+    }
+  },
+  genero: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
+  telefone: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
+  endereco: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   img_perfil: { type: DataTypes.STRING, allowNull: true, defaultValue: '' }
 }, {
   sequelize,
