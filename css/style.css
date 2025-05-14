@@ -9,7 +9,21 @@
     font-weight: normal;
     font-style: normal;
 }
-
+*{
+    font-family: 'poppins';
+    font-size: medium;
+}
+:root{
+    --color-01:#F8A764;
+    --color-01-hover:#f59444;
+    --color-02:#F5E0A5;
+    --color-03:#1C5841;
+    --color-04:#00AD6E;
+    --color-05:#D46240;
+    --font-01:#FFFFFF;
+    --font-02:#16120D;
+}
+/* Nav and footer styles */
 header{
     z-index: 22;
 }
@@ -20,11 +34,6 @@ body, html{
     padding: 0;
     overflow-x: hidden;
 
-}
-
-*{
-    font-family: 'poppins';
-    font-size: medium;
 }
 
 footer {
@@ -86,11 +95,6 @@ footer a:hover, footer p:hover {
     
 }
 
-footer form{
-    padding-left: 15px;
-}
-
-
 .footer-logo {
     font-family: 'poppins';
     font-size: larger;
@@ -108,10 +112,10 @@ footer form{
 .nav-btn-login {
     font-family: 'poppins';
     font-size: medium;
-    font-weight: bold;
+    font-weight:500;
     padding: 0.6em 4em;
-    margin: 0.25em;
-    border-radius: 0.4em;
+    margin: 0.4em;
+    border-radius: 10px;
     border: none;
     outline: none;
     color: white;
@@ -134,7 +138,7 @@ footer form{
 .nav-login-drop {
     font-family: 'poppins';
     font-size: medium;
-    font-weight: bold;
+    font-weight:500;
     margin: 0.75em;
     margin-top: 0.5em;
     padding: 0.5em;
@@ -168,7 +172,7 @@ footer form{
     font-family: 'poppins';
     font-size: medium;
     text-decoration: none;
-    font-weight: bold;
+    font-weight:500;
     margin: 0.5em;
     padding: 0.2em 1em;
     background: transparent;
@@ -181,7 +185,7 @@ footer form{
 }
 
 .nav-drop-btn:hover{
-    color: #a2ffdd;
+    color: #ceffed;
     transition: color 0.15s;
 }
 
@@ -190,9 +194,8 @@ footer form{
     background-size:  1.5em;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0.2em;
+    margin: 0.4em;
     border-radius: 0.4em;
-    padding: 0.3em 0.8em;
 
     border: none;
     outline: none;
@@ -215,7 +218,7 @@ footer form{
 }
 
 .nav-btn:hover{
-    background-color: #58ffc2;
+    background-color: var(--color-04);
     transition: background-color 0.1s;
 }
 
@@ -272,7 +275,7 @@ footer form{
 }
 
 .nav-main-grid{
-    background-color: #fffaecd7;
+    background-color: #fffaecd8;
     display: grid;
     grid-template-columns: max-content auto min-content;
     padding-top: 10px;
@@ -461,7 +464,7 @@ nav .nav-item{
 
 }
 nav .nav-item:hover{
-    color: rgb(0, 255, 170);
+    color: var(--color-04);
     transition: color 0.1s;
 
 }

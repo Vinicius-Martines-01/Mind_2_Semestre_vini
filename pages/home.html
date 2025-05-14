@@ -49,13 +49,13 @@
         <div class="grid-container container-gen">     
             <div class="container-fluid">  
                 <div class="grid-psi">
-                        <div class="search-boxes">
-                            <input type="text" required id="search-input" placeholder="Pesquisar">
-                            <button class="btn-searchBar"><img src="../img/magnifying-glass-solid.png" alt=""></button>
-                        </div>
+                    <div class="search-boxes">
+                        <input type="text" required id="search-input" placeholder="Pesquisar">
+                        <button class="btn-searchBar"><img src="../img/magnifying-glass-solid.png" alt=""></button>
+                    </div>
 
-                    <div class="col col-sm-2">
-                        <button type="button" class="hm-btn-buscar" onclick="AbrirFiltro()">Filtro <img src="/img/seta-filtro.png" class="seta-filtro" alt="" id="seta-checkbox"></button>
+                    <div class="col-2">
+                        <button type="button" class="hm-btn-buscar" onclick="AbrirFiltro()">Filtro <img src="../img/icons/arrow_down.svg" class="seta-filtro" alt="" id="seta-checkbox"></button>
                         <div class="checkbox" id="filtro-checkbox">
                             <div class="checkbox-input">
                                 <input type="checkbox" data-speciality="Ansiedade" id="checkbox-1">
@@ -86,269 +86,133 @@
                 </div>
 
 
-                <div class="row">
-                    <div class="grid-psi container-gen">
-                        <div class="row" style="display: flex; justify-content: center;">
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_1.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Robson Souza
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;"  class="idade-psi">
-                                                        <span style="font-weight: bold;">Idade:</span> 
-                                                        28 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;" class="local-psi"> 
-                                                        <span style="font-weight: bold;">Local: </span>
-                                                        Santo André - SP
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; color: white;">
-                                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
-                                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
-                                                    <a class="hm-psi-stats" data-speciality="Casais">Casais</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="row grid-psi">
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Robson Souza</h1>
+                                    <p class="idade-psi">28 anos</p>
+                                    <p class="local-psi">Santo André - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
+                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
+                                    <a class="hm-psi-stats" data-speciality="Casais">Casais</a>
                                 </div>
                             </div>
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_5.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Amanda Alcantara
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;" class="idade-psi">
-                                                        <span style="font-weight: bold;">Idade:</span> 
-                                                        29 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;" class="local-psi"> 
-                                                        <span style="font-weight: bold;" >Local: </span>
-                                                         São Paulo - SP
-                                                    </span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; justify-items: stretch; color: white;">
-                                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats" data-speciality="Burnout">Burnout</a>
-                                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_1.png">
                             </div>
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_3.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Sueli Silva
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;"  class="idade-psi">
-                                                        <span style="font-weight: bold;">Idade:</span> 
-                                                        35 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;" class="local-psi"> 
-                                                        <span style="font-weight: bold;" >Local: </span>
-                                                        Diadema - SP
-                                                    </span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; justify-items: stretch; color: white;">
-                                                    <a class="hm-psi-stats"  data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Conflitos familiares">Conflitos familiares</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Dependencia Química">Dependência Química</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Insônia">Insônia</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_4.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Milena Botela Santos
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;" class="idade-psi">
-                                                        <span style="font-weight: bold;">Idade:</span> 
-                                                        33 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;"> class="local-psi" 
-                                                        <span style="font-weight: bold;">Local: </span>
-                                                        São Paulo - SP
-                                                    </span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; justify-items: stretch; color: white;">
-                                                    <a class="hm-psi-stats"  data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Conflitos familiares">Conflitos familiares</a>
-                                                    <a class="hm-psi-stats" data-speciality="Insonia">Insonia</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_2.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Dolores Silva
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;"class="idade-psi">
-                                                        <span style="font-weight: bold;">Idade:</span> 
-                                                        45 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;" class="local-psi"> 
-                                                        <span style="font-weight: bold;">Local: </span>
-                                                        Eldorado - SP
-                                                    </span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; justify-items: stretch; color: white;">
-                                                    <a class="hm-psi-stats"  data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Conflitos familiares">Conflitos familiares</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Dependencia Química">Dependência Química</a>
-                                                    <a class="hm-psi-stats" data-speciality="Casais">Casais</a>
-                                                    <a class="hm-psi-stats" data-speciality="Insonia">Insonia</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="psi-card-container">
-                                <div class="card-psi">
-                                    <div class=".card-psi-div-3 container-fluid">
-                                        <div class="card-psi-div-3-item" style="height: 170px;">
-                                            <div class="card-psi-perfil">
-                                                <div class="psi-foto-perfil">
-                                                    <img src="/img/psi_7.png">
-                                                </div>
-                                                <a class="psi-info">
-                                                    <span style="font-weight: bold;" class="nome-psi">
-                                                        Miguel Josue Souza
-                                                    </span><br>
-                                                    <span style="padding-top: 0.4em;" class="idade-psi">
-                                                        <span style="font-weight: bold;" >Idade:</span> 
-                                                        39 anos
-                                                    </span>
-                                                    <span style="padding-top: 0.4em;" class="local-psi"> 
-                                                        <span style="font-weight: bold;" >Local: </span>
-                                                        Santo Amaro - SP
-                                                    </span>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="card-psi-body">
-                                            <a>Trabalha com:</a>
-                                            <div class="container-gen">
-                                                <div class="row" style="display: flex; justify-items: stretch; color: white;">
-                                                    <a class="hm-psi-stats"  data-speciality="Ansiedade">Ansiedade</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Dependencia Química">Dependência Química</a>
-                                                    <a class="hm-psi-stats"  data-speciality="Casais">Casais</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-center">
-                                                <button class="hm-btn-ver">ver</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
+                        </div>
                     </div>
-                </div>
-            </div>  
-        </div>
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Sueli Silva</h1>
+                                    <p class="idade-psi">35 anos</p>
+                                    <p class="local-psi">Diadema - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
+                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
+                                    <a class="hm-psi-stats" data-speciality="Insonia">Insônia</a>
+                                </div>
+                            </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_3.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Amanda Alcantara</h1>
+                                    <p class="idade-psi">29 anos</p>
+                                    <p class="local-psi">São Paulo - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
+                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
+                                    <a class="hm-psi-stats" data-speciality="Casais">Casais</a>
+                                </div>
+                            </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_5.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Milena Botela Santos</h1>
+                                    <p class="idade-psi">33 anos</p>
+                                    <p class="local-psi">São Paulo - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
+                                    <a class="hm-psi-stats" data-speciality="Insonia">Insônia</a>
+                                </div>
+                            </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_4.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Dolores Silva</h1>
+                                    <p class="idade-psi">45 anos</p>
+                                    <p class="local-psi">Eldorado - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Conflitos familiares">Conflitos familiares</a>
+                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
+                                    <a class="hm-psi-stats" data-speciality="Casais">Vasais</a>
+                                    <a class="hm-psi-stats" data-speciality="Insonia">Insônia</a>
+                                </div>
+                            </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-psi">
+                        <div class="card-psychologist">
+                            <div class="general-info">
+                                <div class="infos-psi">
+                                    <h1 class="nome-psi" >Miguel Josue Souza</h1>
+                                    <p class="idade-psi">39 anos</p>
+                                    <p class="local-psi">Santo Amaro - SP</p>
+                                    <button class="hm-btn-ver">Ver</button>
+                                </div>
+                                <div class="tags card-psi-body">
+                                    <a class="hm-psi-stats" data-speciality="Ansiedade">Ansiedade</a>
+                                    <a class="hm-psi-stats" data-speciality="Dependencia Química">Dependência Química</a>
+                                    <a class="hm-psi-stats" data-speciality="Casais">Casais</a>
+                                </div>
+                            </div>
+                             <div class="psi-foto-perfil">
+                                <img src="/img/psi_7.png">
+                            </div>
+                        </div>
+                    </div>
+                    
         <div class="container-fluid" style="margin-top: -70px; padding-bottom: 120px;">
             <div class="row">
                 <div class="col col-sm-9"></div>

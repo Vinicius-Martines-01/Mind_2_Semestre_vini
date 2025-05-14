@@ -1,7 +1,7 @@
 // Adiciona o listener a todos os botões "ver"
 document.querySelectorAll('.hm-btn-ver').forEach(botao => {
   botao.addEventListener('click', function () {
-    const card = botao.closest('.card-psi');
+    const card = botao.closest('.card-psychologist');
 
     // Pegando os dados do card
     const foto = card.querySelector('.psi-foto-perfil img').getAttribute('src');

@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
+    color:#000;
 }
 :root{
     --color-01:#F8A764;
@@ -16,36 +17,58 @@
     --btn-alerta:#8D2000;
 }
 /* Search bar section -------------- */
-.grid-container{
-    margin:20px 30px;
+section{
+    margin:30px;
 }
-.grid-psi, .search-boxes{
-    display: flex;
-    width:100%;
+.grid-container{
+    margin:25px auto;
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    max-width:1100px;
 }
 .grid-psi{
     padding-bottom:30px;
     border-bottom: 1px solid #000;
+    gap:20px;
+    display:flex;
+    flex-wrap: wrap;
+    margin:0px 30px;
+    width:100%;
 }
 .search-boxes{
-    flex-direction: row;
-    justify-items:space-between;
-    gap:20px;
-    position: relative;
+    border-radius:12px;
+    background-color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    border:1px solid #1f1f1f;
+    width:81%;
+}
+@media(max-width:1010px){
+    .search-boxes{
+        width:100%;
+    }
 }
 .search-boxes input{
-    width:100%;
     padding:0.5rem 1rem;
     border-radius:10px;
     padding-right: 2.5rem;
+    position: relative;
+    outline:none;
+    border:none;
+    width:100%;
+}
+.search-boxes button{
+    background: var(--color-04);
+    border-top-right-radius:10px;
+    border-bottom-right-radius: 10px;
+    width:40px;
 }
 .btn-searchBar img{
-    width:40px;
-    height:40px;
+    width:20px;
+    height:20px;
     object-fit:cover;
-    padding:.6rem;
-    background-color: var(--color-03);
-    border-radius:10px;
     cursor: pointer;
 }
 .btn-searchBar{
@@ -53,96 +76,41 @@
 }
 
 /* Filtro --------------------------- */
+div.col-2{
+    padding:0;
+}
 .hm-btn-buscar {
-    position: absolute;
+    position: relative;
     font-size: medium;
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5em 1em;
     border-radius: 0.4em;
-    justify-self: center;
     border: none;
     color: var(--font-01);
-    width: 100%;
     background-color: #1C5841;
     transition: background-color 0.1s;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    width:179px;
 }
 .hm-btn-buscar:hover {
     background-color: var(--color-04);
     transition: background-color 0.25s;
 }
-.row{
-    justify-content: center;
-}
-.hm-btn-ver {
-    position: relative;
-    font-family: 'poppins';
-    font-size: medium;
-    font-weight: bold;
-    padding: 0.5em 2.5em;
-    margin: 0.2em;
-    border-radius: 0.4em;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #D46240;
-    transition: background-color 0.8s;
-    cursor: pointer;
-    transform: translate(0,0) scale(1);
-    transition: transform 0.1s;
-    box-shadow: 0px 1px 2px #b4650b;
-}
-
-.hm-btn-ver:hover {
-    background-color: #ffb758;
-    transition: background-color 0.29s;
-    transform: translate(1px, -1px) scale(1.02);
-    transition: transform 0.1s;
-}
-
-
-.hm-psi-stats {
-    position: relative;
-    font-family: 'poppins';
-    font-size: medium;
-    padding: 0.2em 0.2em;
-    margin: 0.2em;
-    border-radius: 0.4em;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #2c8f6e;
-    transition: background-color 0.5s;
-    flex-grow: 1;
-    cursor: pointer;
-
-    transform: translate(0px, 0px) scale(1.0);
-    transition: transform 0.1s;
-    box-shadow: 0px 1px 2px #144416;
-}
-.hm-psi-stats:hover{   
-    box-shadow: 0px 2px 4px #3b443e;
-    transform: translate(1px, -1px) scale(1.02);
-    transition: transform 0.1s;
-    transition: box-shadow 0.1s
-    
-}
 .checkbox{
     position: absolute;
-    width: 100%;
+    width: 179px;
     background: #1C5841;
     display: flex;
     flex-direction: column;
-    top: 80%;
-    left:4.8%;
-    margin: 0.25em;
-    gap: 10px;
+    top: 110%;
     display: none;
-    padding:10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    padding:6px;
+    padding-left:0;
+    border-radius:10px;
+    z-index:100;
 }
 #filtro-checkbox {
     transform: scaleY(0);
@@ -159,6 +127,9 @@
 #seta-checkbox {
     filter: invert();
     transition: transform 0.3s ease;
+    width:28px;
+    height:28px;
+    margin-bottom:-3px;
 }
 .checkbox-input input{
     display: none;
@@ -174,10 +145,10 @@
     width: 16px;
     height: 16px;
     border-radius: 3px;
-    border: 2px solid #58ffc2;
+    border: 2px solid var(--color-04);
 }
 .checkbox-input input:checked + label:before{
-    background-color: #58ffc2;
+    background-color: var(--color-04);
     transition: 80ms;
     scale: 1.17;
 }
@@ -197,81 +168,72 @@
 }
 
 /* Cards de psicologos ----------------- */
-.card-psi{
-    display: block;
-    align-self: center;
-    border-radius: 2em;
-    margin: 2%;
-    width: 30rem;
-    height: 100%;
-    background-color: #F5E0A5;
-    box-shadow: 0px 2px 8px #a8795a;
-}
-.psi-card-container{
-    height: 450px; 
+.grid-psi{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 20px;
+    gap:10px;
+    margin:20px;
 }
-.card-psi-div-3{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: 30px 200px 100px;
-}
-
-.card-psi-div-3-item{
+.card-psi div{
     display: flex;
-    color: black;
-}
-
-.card-psi-perfil{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    padding-top: 1em;
-    font-family: 'poppins';
-    font-weight: 400;
-    font-size: 16px;
-}
-
-.card-psi-body{
-    height: 155px; 
-    padding-top: 1.2em;
-
-}
-.card-psi-body a{
-    padding-left: 15px; 
-
-}
-.card-psi-body div{
-    padding-left: 15px; 
-    padding-right: 15px;
-}
-
-.psi-foto-perfil{
-    display: flex;
+    align-self: center;
+    flex-direction: row;
     justify-content: center;
-    height: 170px;
-
+    border-radius: 10px;
+    background-color:#FFF2CC;
 }
-
-.psi-info{
-    padding-left: 1em; 
-    display: flex; 
-    flex-direction: column; 
-    flex-wrap: wrap; 
-    align-content: center;
-
+div.card-psychologist{
+    width:450px;
+    height:200px;
 }
-
-.psi-foto-perfil img {
-    object-fit: cover;
-    border-radius: 100%;
-    border: 3px solid #ffffff;
-    height: 155px;
-    width: 155px
+.general-info{
+    padding:15px;
+    gap:10px;
+}
+div.infos-psi{
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    justify-content: space-between;
+}
+.infos-psi h1{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.infos-psi p{
+    font-size: .8rem;
+    margin:5px;
+}
+.hm-btn-ver{
+    font-size: 1.2rem;
+    background-color: var(--color-05);
+    border:none;
+    color:var(--font-01);
+    padding:5px 10px;
+    border-radius: 10px;
+}
+div.tags{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+a.hm-psi-stats{
+    background-color: var(--color-03);
+    font-size: .7rem;
+    color: var(--font-01) !important;
+    border-radius:5px;
+    padding:2px 4px;
+}
+.psi-foto-perfil{
+    width:170px;
+    height:100%;
+}
+.psi-foto-perfil img{
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+    border-bottom-right-radius:10px;
+    border-top-right-radius: 10px;
 }
 
 /* pop-up-psicologos------------------------ */

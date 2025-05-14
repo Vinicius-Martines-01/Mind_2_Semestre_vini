@@ -1,3 +1,15 @@
+:root{
+    --color-01:#F8A764;
+    --color-01-hover:#f59444;
+    --color-02:#F5E0A5;
+    --color-03:#1C5841;
+    --color-04:#00AD6E;
+    --color-05:#D46240;
+    --font-01:#FFFFFF;
+    --font-02:#16120D;
+}
+
+/* Nav styles */
 .cont-nav {
     display: flex;
     padding-left: 6%;
@@ -18,7 +30,7 @@
 }
 
 .btn-green:hover {
-    background-color: #58ffc2;
+    background-color: var(--color-04);
 }
 .logo_size {
     height: 100%;
@@ -40,13 +52,13 @@ nav .nav-item:hover{
     padding: 0.3em 0.5em;
     width: 3%;
 
-    color: #14ff14;
+    color: var(--color-04);
     background-color: #00AD6E;
     cursor: pointer;
 }
 
 .icon-click:hover{
-    background-color: #58ffc2;
+    background-color: var(--color-04);
     cursor: pointer;
 }
 .filtro{

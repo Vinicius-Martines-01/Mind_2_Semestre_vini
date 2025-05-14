@@ -38,5 +38,5 @@ function AbrirFiltro() {
     const filtro = document.getElementById('filtro-checkbox');
     const seta = document.getElementById('seta-checkbox');
     filtro.classList.toggle('show');
-    seta.style.transform = filtro.classList.contains('show') ? 'rotate(90deg)' : 'rotate(0deg)';
+    seta.style.transform = filtro.classList.contains('show') ? 'rotate(-90deg)' : 'rotate(0deg)';
 }

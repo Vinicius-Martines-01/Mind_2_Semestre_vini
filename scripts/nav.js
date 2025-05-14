@@ -301,9 +301,6 @@ document.getElementById('mainFooter').innerHTML = `
                         <button value="mind@falsoemail.com" onclick="copyValue(value)" type="button" title="copiar email"  class="nav-btn btn-circle"
                         style="background-image: url('../img/mail_icon.svg');">
                         </button>
-                        <button value="mind-2@falsoemail.com" onclick="copyValue(value)" type="button" title="copiar email"  class="nav-btn btn-circle"
-                        style="background-image: url('../img/mail_icon.svg');">
-                        </button>
                         <button value="(11) 1111-1111" onclick="copyValue(value)" type="button" title="copiar telefone"  class="nav-btn btn-circle"
                         style="background-image: url('../img/call_icon.svg');">
                         </button>
