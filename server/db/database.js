@@ -7,7 +7,7 @@ export async function createDatabase() {
     const connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: 'gris3@',
+      password: 'admin',
     });
 
     connection.query('CREATE DATABASE IF NOT EXISTS mind_plus_ultra', (err, results) => {
@@ -22,7 +22,7 @@ export async function createDatabase() {
 }
 
 // Configuração do Sequelize para se conectar ao banco de dados
-const sequelize = new Sequelize('mind_plus_ultra', 'root', 'gris3@', {
+const sequelize = new Sequelize('mind_plus_ultra', 'root', 'admin', {
   host: 'localhost',
   dialect: 'mysql',
 });
