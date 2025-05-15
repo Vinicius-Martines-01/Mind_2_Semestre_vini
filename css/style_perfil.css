@@ -1,220 +1,151 @@
-.container-perfil{
-    display: grid;
-    grid-template-columns: 20em auto;
-    grid-template-rows: 800px;
-    margin-right: 3%;
-    
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
-
-.container-perfil-row{
-    display: grid;
-    grid-template-rows: 600px auto;
-
+:root{
+    --color-01:#F8A764;
+    --color-01-hover:#f59444;
+    --color-02:#F5E0A5;
+    --color-03:#1C5841;
+    --color-04:#00AD6E;
+    --color-05:#D46240;
+    --font-01:#FFFFFF;
+    --font-02:#16120D;
 }
-
-.container-perfil-col-2{
-    display: grid;
-    grid-template-columns: 60% auto;
-    grid-template-rows: inherit;
-    flex-flow: row;
-    flex-wrap: wrap;
+section.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:20px;
 }
-
-.container-perfil-row-2{
-    display: grid;
-    grid-template-rows: auto auto;
-    flex-flow: row;
-    flex-wrap: wrap;
-}
-
-
-.perfilTex::first-letter {
-    text-transform: capitalize;
-}
-
-.foto-perfil{
-    height: 170px;
-    padding-left: 3em;
-
-}
-
-.foto-perfil img {
-    border-radius: 100%;
-    width: 10rem;
-    outline: 3px solid rgb(126, 255, 137);
-}
+/* Perfil - lado esquerdo -----------------------*/
 .card-perfil-main {
-    background-color: #287e5d; 
-    border-top-right-radius: 100%;
+    background-color: var(--color-03);
+    width:420px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding:35px 20px;
 }
-.card-perfil-container {
-    display: flexbox;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 60px;
-}
-
 .card-perfil-content{
-    display: flexbox;
-    justify-content: flex-start;
+    display: flex;
     flex-direction: column;
     color: white;
-    padding: 35px;
-    margin-bottom: 5px;
+    margin:20px 10px;
+}
+.foto-perfil img {
+    border-radius: 100%;
+    width: 170px;
+    margin:20px 0;
+}
+.contato{
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+.contato button{
+    border:none;
+    background-color: var(--color-04);
+    padding:5px;
+    border-radius: 50%;
+    cursor:pointer
+}
+.contato button:hover{
+    background-color: var(--color-05);
+}
+.configuracao{
+    border:none;
+    border-radius: 10px;
+    background-color: var(--color-04);
+    padding:8px 20px;
+    margin:10px;
+}
+.configuracao:hover{
+    background-color: var(--color-05);
+}
+.configuracao a{
+    color:var(--font-01);
+    text-decoration: none;
+}
+.configuracao a:hover{
+    color:var(--font-01);
+    text-decoration: none;
+}
+/* Áreas de apresentação do usuário */
+.container-perfil-row-2{
+    width:100%;
+}
+.infos{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin:0 30px 20px 30px;
+}
+div.card-sobre-container{
+    width:100%;
+    font-size: 1rem;
+    min-height:100px;
+    border-radius: 10px;
+    border:1px solid #666666;
+}
+div.card-info-container h3{
+    font-size: 1.1rem;
 }
 
+/* Perfil - Notificações -------------------------*/
 .card-notif-container {
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #F5E0A5;
-
-
-    height: inherit;
-    overflow: hidden;
-
-    margin: 0.6em;
-    padding: 3%;
-    border-radius: 0.5em;
+    width: 420px;
+    flex-direction: column;
+    border-radius:10px;
+    background-color: var(--color-01-hover);
+    padding:15px;
+    margin:20px;
+    margin-left:0;
+    height:700px;
+    overflow:hidden;
 }
-
-.card-notif-container h1 {
-    line-height: 0.2; 
-    font-size: medium;
-
+.notificacoes{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin:20px 0;
+    overflow-Y:scroll;
+    height:610px;
+    padding-right:10px;
+    scrollbar-width: thin;
+    border-radius: 5px;
 }
-
-.card-notif-content {
-    margin-top: 10px;
-    width: 100%;
-    height: 90%;
-    min-height: fit-content;
-    max-height: inherit;
-    font-size: medium;
+.notif-titulo {
+    font-size: 1.1rem;
+    color:var(--font-01)
 }
-
-
-
 .card-notif-session {
     display: flex;
     flex-direction: row;
-    background-color: white;
-    margin-top: 10px;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 5px;
-    min-width: 70%;
-    width: 100%;
-    height: 100px;
-    border-radius: 0.5em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--font-01);
+    height: 80px;
+    border-radius:5px;
     padding: 10px;
-    font-size: medium;
-
-    outline: none;
-    transition: outline 0.1s;
-
+    font-size: 1rem;
 }
-
-.card-notif-session.clicked{
-    outline: 5px solid rgb(0, 219, 0);
-    transform:scale(1.01);
-    transition: outline 0.1s;
-    transition: transform 0.25s;
-
+.card-notif-btn{
+    border:none;
+    background-color: var(--color-04);
+    padding:2px 10px;
+    border-radius: 5px;
+    color:var(--font-01)
 }
-.card-notif-session-col-2 {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: inherit;
+.card-notif-btn:hover{
+    background-color: var(--color-03);
 }
-
-
-.notif-titulo{
-
-    font-weight: bolder;
-    padding: 1.0em;
-    padding-bottom: 0;
-}
-
-.notif-texto{
-    place-self: center;
-    flex-wrap: wrap;
-    font-weight: 400;
-    flex-grow: 1;
-    flex-shrink: 1;
-
-}
-
-.card-notif-btn {
-    position: relative;
-    font-family: 'chillax';
-    font-size: medium;
-    font-weight: bold;
-    padding: 0.5em 0%;
-    width: 100%;
-    flex-grow: 1;
-    margin-inline: 0.5em;
-    border-radius: 0.4em;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #00AD6E;
-    transition: background-color 0.8s;
-    cursor: pointer;
-    transform: translate(0,0) scale(1);
-    transition: transform 0.1s;
-    box-shadow: 0px 1px 2px rgb(11, 148, 22);
-}
-
-.card-notif-btn:hover {
-    background-color: #1fda95;
-    transition: background-color 0.8s;
-    cursor: pointer;
-    transform: translate(2px,-2px) scale(1.05);
-    transition: transform 0.1s;
-    box-shadow: 0px 1px 2px rgb(11, 148, 22);
-}
-
-
-
-.card-sobre-container {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    overflow-y: auto;
-    height: 14em;
-    max-height: 90%;
-    width: 100%;
-    background-color: white;
-    border-radius: 0.5em;
-}
-
-
-
-.perfil-btn{
-    background-size:  1.5em;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0.2em;
-    border-radius: 10em;
-    border: none;
-    outline: none;
-
-    width: 3.0em;
-    height: 3.0em;
-
-    background-color: #00AD6E;
-    cursor: pointer;
-}
-.perfil-btn:hover{
-    background-color: #58ffc2;
-    cursor: pointer;
-}
-
-.calendar-card{
-    display: flex;
-    height: 10%;
-    width: 1%;
+.notificacoes::-webkit-scrollbar {
+    width:12px;
 }

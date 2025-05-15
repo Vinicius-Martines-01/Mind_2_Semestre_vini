@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const especialidadesSelecionadas = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.getAttribute('data-speciality').toLowerCase());
-        let algumCardVisivel = false;
         if (especialidadesSelecionadas.length === 0) {
             cards.forEach(card => {
                 card.style.display = "block";

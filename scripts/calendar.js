@@ -16,20 +16,19 @@ let ano = date.getFullYear();
 function coresMes() {
     const dia_invalido = document.querySelectorAll('.dia-invalido');
     
-    const calendarColors = ['#9d64f8', '#f89a64', '#3438ff', '#64f878', '#ffee00',
-        '#fc883a', '#64f864', 'gold', 'yellow', '#f864f1', 'blue', '#f81e30'
+    // Cores antigas
+    // const calendarColors = ['#9d64f8', '#f89a64', '#3438ff', '#64f878', '#ffee00','#fc883a', '#64f864', 'gold', 'yellow', '#f864f1', 'blue', '#f81e30'
+    // ] 
+
+    const calendarColors = ['#ACACAC', '#9D64F8', '#235789', '#5299DB', '#FFE53E', '#ff5857', '#2EA52E', '#ffd808', '#FFE643', '#ff6eb2', '#3BA0FF', '#f81e30'
     ]
 
-    const diaInvColors = ['#d7ccf5', '#ffddaa', '#acaaff', '#c9ffc2', '#fff4b8',
-        '#ffe9b8', '#b8ffca', '#ffeeb8', '#fffbc7', '#ffdfff', '#dfe1ff', '#ffdfdf'
-        ]
-    calendar_body.style.background = `linear-gradient(to bottom, 
-    white -150%,
-    ${calendarColors[mes]}, 
-    #000 350%)`;
+    const diaInvColors = ['#d7ccf5', '#ffddaa', '#acaaff', '#c9ffc2', '#fff4b8','#ffe9b8', '#b8ffca', '#ffeeb8', '#fffbc7', '#ffdfff', '#dfe1ff', '#ffdfdf'
+    ]
+    calendar_body.style.background = calendarColors[mes];
     //calendar_body.style.opacity = '0.95';
 
-    const mes_titulo_contraste = [4, 5, 7, 8, 11]
+    const mes_titulo_contraste = [4, 5, 7, 8]
 
     if (mes_titulo_contraste.includes(mes)) {
         titulo_mes.classList.add('constrast')

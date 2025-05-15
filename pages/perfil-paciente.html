@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/sobrenos.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style_perfil.css">
@@ -51,111 +50,86 @@
     </header>
 
 
-    <section>    
-        <div class="container-perfil">              
+    <section class="section">                
         <div class="card-perfil-main">
-            <div class="card-perfil-container" style="color: white;">
+            <div class="card-perfil-content">
                 <div class="foto-perfil">
                     <img id="perfilFoto" src="/img/cliente_ex.png">
                 </div>
-                <div class="card-perfil-content">
-                    <h2 id="perfilNome">
-                        Nome Sobrenome
-                    </h2>
-                    <p id="perfilIdade">Idade:   </p>
-                    <p>Local:   </p>
-                    <p>Contatos:</p>
-                    <div style="display: flex; align-items: center; padding-bottom:20px;">
-                        <button type="button" class="perfil-btn" onclick="copyNumber()"
-                            style="background-image: url('/img/clipboard.png');">
-                        </button>   
-                        <span id="cell-n" style="padding-left: 5%;">+55 11 9000-0000</span>
-
-                    </div>
-                    <p><a href="./configuracoes.html" style="color:#fff; text-decoration: none;">Configurações</a></p>
+                <h2 id="perfilNome">Nome Sobrenome</h2>
+                <p id="perfilIdade">Idade:  </p>
+                <p>Local:  </p>
+                <div class="contato">
+                    <button type="button" class="perfil-btn" onclick="copyNumber()"><img src="../img/call_icon.svg" alt="telefone">
+                    </button>   
+                    <span id="cell-n">+55 11 9000-0000</span>
                 </div>
             </div>
-
+            <button class="configuracao"><a href="./configuracoes.html">Configurações</a></button>
         </div>
-        <div class="container-perfil-row">
-            <div class="container-perfil-col-2">
-                <div class="container-perfil-row-2">
-                    <div class="calendar">
-                        <div class="row">
-                            <div class="col">
-                                <h1>Outubro</h1>
-                            </div>
-
-                            <div class="col-md-3">
-                                <nav>
-                                    <button id="anterior"></button>
-                                    <button id="proximo"></button>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="calendar-inside">
-                            <div class="calendario">
-                                <ul class="calendar-week">
-                                    <li class="dia-cabecalho">Dom</li>
-                                    <li class="dia-cabecalho">Seg</li>
-                                    <li class="dia-cabecalho">Ter</li>
-                                    <li class="dia-cabecalho">Qua</li>
-                                    <li class="dia-cabecalho">Qui</li>
-                                    <li class="dia-cabecalho">Sex</li>
-                                    <li class="dia-cabecalho">Sáb</li>
-                                </ul>
-                                <ul class="dias-do-calendario">
-                                
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-notif-container">
-                        <h1>
-                            Sobre mim
-                        </h1>
-                            <div class="card-sobre-container">
-                        </div>
-                    </div>
+        
+        <div class="container-perfil-row-2">
+            <div class="calendar">
+                <div class="cabecalho">
+                    <h1>Outubro</h1>
+                    <nav class="controllers">
+                        <div id="anterior"><img src="../img/icons/arrow_down.svg" alt="seta para esquerda"></div>
+                        <div id="proximo"><img src="../img/icons/arrow_down.svg" alt="seta para direita"></div>
+                    </nav>
                 </div>
-                <div class="card-notif-container">
-                    <div class="notif-titulo">Notificações</div>
+                <div class="calendar-inside">
+                    <ul class="calendar-week">
+                        <li class="dia-cabecalho">Dom</li>
+                        <li class="dia-cabecalho">Seg</li>
+                        <li class="dia-cabecalho">Ter</li>
+                        <li class="dia-cabecalho">Qua</li>
+                        <li class="dia-cabecalho">Qui</li>
+                        <li class="dia-cabecalho">Sex</li>
+                        <li class="dia-cabecalho">Sáb</li>
+                    </ul>
+                    <ul class="dias-do-calendario">
                     
-                    <div class="container-fluid card-notif-content">
-                        <div class="row">
-                            <div  id="notifSide" class="col card-notif-session card-notif-session-col-2 ">
-                                <div class="notif-texto">
-                                    Sessão do dia 25/10 <br>começa ás 18:00
-                                </div>
-                                <div style="display: flex; align-self: center;">
-                                    <a href="stream-terapia.html">
-                                        <button class="card-notif-btn" onclick="setTerapia(1)">Entrar</button>
-                                    </a>
-                                </div>
-                            </div>  
-                            <div  id="notifSide" class="col card-notif-session card-notif-session-col-2 ">
-                                <div class="notif-texto">
-                                    Sessão do dia 28/10 <br>começa ás 18:00
-                                </div>
-                                <div style="display: flex; align-self: center;">
-                                    <a href="stream-terapia.html">
-                                        <button class="card-notif-btn" onclick="setTerapia(2)">Entrar</button>
-                                    </a>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>
-
+                    </ul>
                 </div>
             </div>
-                <div class="card-notif-container" style="background-color: #D46240;">
-                    <h1 style="color: white;">
-                        Minha ficha
-                    </h1>
-                        <div class="card-sobre-container">
-                    </div>
+            <div class="infos">
+                <div class="card-info-container">
+                    <h3>Sobre mim</h3>
+                    <div class="card-sobre-container"></div>
                 </div>
+                <div class="card-info-container">
+                    <h3>Minha ficha</h3>
+                    <div class="card-sobre-container"></div>
+                </div>
+            </div>
         </div>
+
+        <div class="card-notif-container">
+            <div class="notif-titulo">Notificações</div>
+            <div>
+                <div class="notificacoes">
+                    <div  id="notifSide" class="card-notif-session">
+                        <div>
+                            Sessão do dia 25/10 <br>começa ás 18:00
+                        </div>
+                        <div>
+                            <a href="stream-terapia.html">
+                                <button class="card-notif-btn" onclick="setTerapia(1)">Entrar</button>
+                            </a>
+                        </div>
+                    </div>  
+                    <div  id="notifSide" class="card-notif-session">
+                        <div>
+                            Sessão do dia 28/10 <br>começa ás 18:00
+                        </div>
+                        <div>
+                            <a href="stream-terapia.html">
+                                <button class="card-notif-btn" onclick="setTerapia(2)">Entrar</button>
+                            </a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
         </div>
     </section>
 

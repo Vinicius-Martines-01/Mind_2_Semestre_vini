@@ -95,9 +95,11 @@ function desktopNav(){
       // se o usuário estiver no perfil
       if (this.window.location.href.includes('perfil')){
         navB += `<div></div>
-                      <button type="button"  class="nav-btn"
-                          style="background-image: url('../img/magnifying-glass-solid.png');">
-                      </button>  
+                      <a href="../pages/home.html">
+                        <button type="button"  class="nav-btn"
+                            style="background-image: url('../img/magnifying-glass-solid.png');">
+                        </button>
+                      </a>
 
                       <button type="button"  onclick="logout()" class="nav-btn nav-btn-logout"
                       style="background-image: url('../img/user-logout3.png');">
@@ -105,9 +107,11 @@ function desktopNav(){
       } else {
       // else: usuário está logado mas não no perfil
       navB += `<div></div>
-              <button type="button"  class="nav-btn"
-                style="background-image: url('../img/magnifying-glass-solid.png');">
-              </button>  
+              <a href="../pages/home.html">
+                <button type="button"  class="nav-btn"
+                  style="background-image: url('../img/magnifying-glass-solid.png');">
+                </button>
+              </a>
               <a href="../pages/perfil-paciente.html">
               <button type="button"  class="nav-btn"
                 style="background-image: url('../img/user-regular.png');
