@@ -48,3 +48,45 @@ especialidades.forEach(esp => {
 document.getElementById('pop-up-fechar').addEventListener('click', function () {
   document.querySelector('.container-pop-up-agendarConsulta').style.display = 'none';
 });
+
+
+
+
+/* script calendario do perfil do psicologo ---------------- */
+  const meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+
+  let dataAtual = new Date();
+  let mes = dataAtual.getMonth();
+  let ano = dataAtual.getFullYear();
+
+  const spanMes = document.getElementById("mesAtual");
+  const btnPrev = document.getElementById("prev");
+  const btnNext = document.getElementById("next");
+
+  function atualizarMes() {
+    spanMes.textContent = `${meses[mes]}`;
+  }
+
+  btnPrev.addEventListener("click", () => {
+    mes--;
+    if (mes < 0) {
+      mes = 11;
+      ano--;
+    }
+    atualizarMes();
+  });
+
+  btnNext.addEventListener("click", () => {
+    mes++;
+    if (mes > 11) {
+      mes = 0;
+      ano++;
+    }
+    atualizarMes();
+  });
+
+  atualizarMes();
+

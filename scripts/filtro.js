@@ -39,3 +39,4 @@ function AbrirFiltro() {
     filtro.classList.toggle('show');
     seta.style.transform = filtro.classList.contains('show') ? 'rotate(-90deg)' : 'rotate(0deg)';
 }
+

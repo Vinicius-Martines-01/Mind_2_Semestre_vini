@@ -1,13 +1,14 @@
 .termos-container{
     display: flex;
     flex-direction: column;
-    padding-inline: 6em;
+    margin-inline: 2rem;
+    align-items: center;
 }
 
 ol{
     display: flex;
     flex-direction: column;
-    padding-inline: 2em;
+    padding-inline: 0.5em;
     counter-reset: item;
 }
 
@@ -18,16 +19,10 @@ ol > li{
     padding-bottom: 0.9em;
     text-indent: 40px;
 }
-
-
-
 ol > li::before{
     content: counters(item, ".") ". - ";
 
 }
-
-
-
 .letter-li{
     counter-reset: chapter;
 }
@@ -38,4 +33,15 @@ ol > li::before{
 
 .letter-li > li::before{
     content: counter(chapter, lower-alpha) ". - ";
+}
+.titulo-termos{
+    margin-bottom:2rem;
+}
+@media(max-width:800px){
+    .termos-container{
+        margin-inline: 0rem;
+    }
+    ol > li{
+        font-size: 12px;
+    }
 }

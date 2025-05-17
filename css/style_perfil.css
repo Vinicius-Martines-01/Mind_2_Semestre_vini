@@ -107,7 +107,6 @@ div.card-info-container h3{
     padding:15px;
     margin:20px;
     margin-left:0;
-    height:700px;
     overflow:hidden;
 }
 .notificacoes{
@@ -145,6 +144,7 @@ div.card-info-container h3{
 }
 .card-notif-btn:hover{
     background-color: var(--color-03);
+    cursor: pointer;
 }
 .notificacoes::-webkit-scrollbar {
     width:12px;

@@ -70,7 +70,7 @@ section h1{
     justify-content: end;
 }
 .container-deletar{
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,6 +100,44 @@ input[type="file"]{
 .btn-deletar{
     background-color: var(--btn-alerta);
 }
+
+/* container-perfil------------------------------- */
+
+.container-perfil{
+    display: flex;
+    flex-direction: column;
+}
+.container-perfil h1{
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+    margin-top: 2rem;
+}
+.container-sobre-mim, .container-medicamento, .container-preferencias, .container-especializacoes, .container-horario-atendimento{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+.container-sobre-mim span, .container-medicamento span, .container-preferencias span,  .container-especializacoes span, .container-horario-atendimento span{
+    opacity: 50%;
+}
+
+.container-sobre-mim textarea, .container-medicamento textarea, .container-preferencias textarea{
+    height: 100px;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+.container-sobre-mim textarea:focus, .container-medicamento textarea:focus, .container-preferencias textarea:focus, .container-sobre-mim textarea:focus, .container-agendamento>:focus{
+    outline: 0;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+
+
+
+
 
 
 
