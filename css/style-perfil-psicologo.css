@@ -19,6 +19,7 @@
     flex-direction: row;
     gap: 10px;
     margin-bottom: 15rem;
+    margin-inline: 1rem;
 }
 .card-horarios span{
     flex: 1;
@@ -228,4 +229,19 @@
 .btn-agendar:hover{
     background-color: var(--color-01-hover);
     cursor: pointer;
+}
+@media(max-width:800px){
+    .container-pop-up-agendarConsulta{
+        top: 60%;
+        width: 350px;
+    }
+    #pop-up-img{
+        width: 150px;
+    }
+    .container-info h1{
+        font-size: 20px;
+    }
+    .container-aceitar-recusar{
+        flex-direction: column;
+    }
 }

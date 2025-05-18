@@ -44,22 +44,33 @@
             </div>
     </header>
 
-    <section>
-        <div>
-            <div class="streaming-psicologo"><img src="../img/streaming-img/icon-streaming.png" alt="psicologo"></div>
-            <div></div>        
+    <section class="section-stream">
+        <div class="container-psi">
+            <img src="../img/streaming-img/icon-streaming.png" alt="psicologo" id="img-psi">
+            <div class="container-ajusts">
+                <div class="container-input">
+                    <img src="../img/icon-volume.png" alt="">
+                    <input type="range" min="0" max="100" value="50" class="input-stream">
+                </div>
+                <div class="btns-stream">
+                    <button class="btn-camera"><img src="../img/streaming-img/icon-camera.png" alt="" class="img-camera"></button>
+                    <button class="btn-recusar"><img src="../img/icon-recusar.png" alt="" class="img-recusar"></button>
+                    <button class="btn-microfone"><img src="../img/fone_false.png" alt="" class="img-microfone"></button>
+                </div>
+                
+            </div>
         </div>
-        <div>
-            <div class="streaming-paciente"><img src="../img/streaming-img/icon-streaming.png" alt="paciente"></div>
-            <div></div>
+        <div class="container-paciente">
+            <img src="../img/streaming-img/icon-streaming.png" alt="" id="img-paciente">
         </div>
+        
     </section>
 
-    <a href="/pages/perfil-paciente.html">
+    <!-- <a href="/pages/perfil-paciente.html">
         <button type="button"  class="nav-btn nav-btn-cancel"
             style="background-image: url('/img/cancel.png');
             margin-right: 20%;">
         </button>
-    </a> 
+    </a>  -->
 
 </body>
