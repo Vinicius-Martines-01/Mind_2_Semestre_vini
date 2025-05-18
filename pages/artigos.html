@@ -42,23 +42,28 @@
             <h1>Artigos de Saúde Mental</h1>
             <h2>Rápidas dicas e recomendações sobre saúde mental e segurança pessoal para o seu dia a dia</h2>
             <hr>
-            <article class="artigo-container">
-                <div style="background-image: url(/img/quebra-cab.png);"></div>
-                <div class="artigo-texto">
-                    <h3>Importância da consulta<br> psicologica</h3>
-                    <button type="button" class="artigo-btn" onclick="getArtigo(this, 0)">Ver</button>
-                    <p></p>
-                </div>
-            </article>
-
-            <article class="artigo-container">
-                <div style="background-image: url(/img/tela_celular.png);"></div>
-                <div class="artigo-texto">
-                    <h3>Números de emergência para segurança</h3>
-                    <button type="button" class="artigo-btn" onclick="getArtigo(this, 1)">Ver</button>
-                    <p></p>
-                </div>
-            </article>
+            <div class="artigos">
+                <article class="artigo-container">
+                    <img src="../img/quebra-cab.png" alt="imagem de artigo">
+                    <div class="artigo-texto">
+                        <div class="visible">
+                            <h3>Importância da consulta<br> psicologica</h3>
+                            <button type="button" class="artigo-btn" onclick="getArtigo(this, 0)">Ver</button>
+                        </div>
+                        <p></p>
+                    </div>
+                </article>
+                <article class="artigo-container">
+                    <img src="../img/tela_celular.png" alt="imagem de artigo">
+                    <div class="artigo-texto">
+                        <div class="visible">
+                            <h3>Números de emergência para segurança</h3>
+                            <button type="button" class="artigo-btn" onclick="getArtigo(this, 1)">Ver</button>
+                        </div>
+                        <p></p>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
     

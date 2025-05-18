@@ -44,7 +44,17 @@ function loadArtigos(n){
 function getArtigo(own, n){
     let text = ''
     text += loadArtigos(n)
-    own.nextElementSibling.classList.toggle('artigo-texto-inside')
-    own.nextElementSibling.innerHTML = text;
+
+    const artigoContainer = own.closest('.artigo-texto');
+    const p = artigoContainer.querySelector('p');
+
+    p.classList.toggle('artigo-texto-inside')
+    if (p.classList.contains('artigo-texto-inside')) {
+        p.style.display = "block"
+        p.innerHTML = loadArtigos(n);
+    } else {
+        p.style.display = "none"
+        p.innerHTML = '';
+    }
 }
 

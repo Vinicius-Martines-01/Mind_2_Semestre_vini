@@ -1,6 +1,3 @@
-/* 
-atualização sobrenos----------------------------------------- */
-
 *{
     margin: 0px;
     padding: 0px;
@@ -26,20 +23,21 @@ atualização sobrenos----------------------------------------- */
     justify-content: space-around;
     background-color: var(--color-03);
     width: 100%;
+    align-items:center
 }
 .imagem1{
-    margin: 4rem
+    margin: 4rem;
+    width:clamp(250px, 20vw, 400px);
 }
 .container-text-sb-1{
     width: 50%;
 }
 .container-text-sb-1 p{
     color: var(--font-01);
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 500;
     text-indent: 2rem; 
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin:30px;
     margin-inline: 5%;
 }
 .container-sb-2{
@@ -48,18 +46,19 @@ atualização sobrenos----------------------------------------- */
     background-color: var(--font-01);
     padding: 4rem;
     justify-content: space-around;
+    align-items:center
 }
 .container-text-sb-2{
     flex-direction: column;
     align-items: center;
 }
 .container-text-sb-2 p{
-    font-size: 1.2rem;
-    font-weight:400;
+    font-size: 1rem;
+    font-weight:500;
     text-indent: 2rem; 
 }
 .imagem2{
-    width: 400px;
+    width: 300px;
     border-radius: 10px;
 }
 .container-text-sb-2{
@@ -69,13 +68,10 @@ atualização sobrenos----------------------------------------- */
 /* 
 responsividade -------------------------------------- */
 
-@media(max-width:800px){
+@media(max-width:836px){
     .container-sb-1{
         flex-direction: column;
         align-items: center;
-    }
-    .imagem1{
-        width: 50vw
     }
     .container-text-sb-1{
         width: 70%;
@@ -90,7 +86,7 @@ responsividade -------------------------------------- */
         align-items: center;
     }
     .imagem2{
-        width: 90vw;
+        width: 85vw;
         height: 45vw;
         object-fit: cover;
         object-position: 50% 30%;
@@ -107,10 +103,10 @@ responsividade -------------------------------------- */
 
 .btn-sobre {
     font-family: 'poppins';
-    font-size: medium;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0.75em 5rem;
-    margin: 1.0rem;
+    margin-top:20px;
     border-radius: 0.4em;
     border: none;
     outline: none;
@@ -123,7 +119,7 @@ responsividade -------------------------------------- */
 }
 
 .btn-sobre:hover {
-    background-color: #F8A764;
+    background-color: var(--color-05);
    transform: scale(1.01, 1.01);
 }
 
