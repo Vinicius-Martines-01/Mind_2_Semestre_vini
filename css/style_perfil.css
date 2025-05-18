@@ -18,7 +18,7 @@ section.section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap:20px;
+    gap:10px;
 }
 /* Perfil - lado esquerdo -----------------------*/
 .card-perfil-main {
@@ -29,8 +29,7 @@ section.section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding:35px 20px;
+    padding:20px;
 }
 .card-perfil-content{
     display: flex;
@@ -38,10 +37,23 @@ section.section{
     color: white;
     margin:20px 10px;
 }
+.card-perfil-settings{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height:100%;
+    color:var(--font-01)
+}
 .foto-perfil img {
     border-radius: 100%;
-    width: 170px;
-    margin:20px 0;
+    width: clamp(120px, 20vw, 170px);
+    margin-bottom:20px;
+}
+#cell-n, .configuracao a {
+    font-size:clamp(0.9rem, 2vw, 1rem);
+}
+#perfilNome{
+    font-size:clamp(1.1rem, 4vw, 1.4rem);
 }
 .contato{
     display:flex;
@@ -76,7 +88,7 @@ section.section{
     color:var(--font-01);
     text-decoration: none;
 }
-/* Áreas de apresentação do usuário */
+/* Áreas de apresentação do usuário ------------------*/
 .container-perfil-row-2{
     width:100%;
 }
@@ -130,7 +142,7 @@ div.card-info-container h3{
     justify-content: space-between;
     align-items: center;
     background-color: var(--font-01);
-    height: 80px;
+    height: 100%;
     border-radius:5px;
     padding: 10px;
     font-size: 1rem;
@@ -148,4 +160,50 @@ div.card-info-container h3{
 }
 .notificacoes::-webkit-scrollbar {
     width:12px;
+}
+
+/* Responsividade */
+
+@media(max-width:946px){
+    section.section{
+        width:100%;
+        flex-direction: column;
+    }
+    .card-perfil-main{
+        width:100%;
+        border-radius: 0;
+        align-items: flex-start;
+
+    }
+    .card-perfil-content, .card-perfil-settings{
+        flex-direction: row;
+        gap:25px;
+    }
+    .card-perfil-content{
+        align-items: center;
+    }
+    .card-perfil-settings{
+        display:flex;
+        width:100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-end ;
+    }
+    .foto-perfil img, .configuracao{
+        margin:0;
+    }
+    .info{
+        margin:0 10px
+    }
+    .card-notif-session{
+        height: 100%;
+    }
+    .card-notif-container{
+        margin:20px 20px;
+        width:90%;
+        align-self:center;
+    }
+    .notificacoes{
+        height:100%;
+    }  
 }

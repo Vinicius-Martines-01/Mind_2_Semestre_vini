@@ -44,8 +44,8 @@ section h1{
     gap: 2.5rem;
 }
 .imgEdit{
-    width: 200px;
-    height: 200px;
+    width: clamp(150px, 20vw, 180px);
+    height: clamp(150px, 20vw, 180px);
     border-radius: 50%;
     background-color: #29292969;
 }  
@@ -84,7 +84,7 @@ section h1{
 input[type="file"]{
     display:none;
 }
-/* Estilo geral dos botões da página*/
+/* Estilo geral dos botões da página --------------*/
 .btns{
     border:none;
     background-color: var(--color-03);
@@ -92,6 +92,7 @@ input[type="file"]{
     padding:0.5rem 1rem;
     color:var(--font-01);
     cursor: pointer;
+    font-size:.9rem;
     box-shadow: 0px 0px 8px -5px #000;
 }
 .btns:hover{
@@ -119,6 +120,7 @@ input[type="file"]{
 }
 .container-sobre-mim span, .container-medicamento span, .container-preferencias span,  .container-especializacoes span, .container-horario-atendimento span{
     opacity: 50%;
+    font-size:.85rem;
 }
 
 .container-sobre-mim textarea, .container-medicamento textarea, .container-preferencias textarea{
@@ -143,20 +145,33 @@ input[type="file"]{
 
 /* pop-ups------------------------------------ */
 .pop-up-deletar{
+    display:none;
+    width:100%;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #35353570;
+    backdrop-filter: blur(4px);
+    z-index: 6;
+    overflow: hidden;
+}
+.pop-up-deletar div{
    position: absolute; 
    background-color: var(--font-01);
-   width: 70%;
+   width:600px;
    padding: 3rem;
    display: flex;
    flex-direction: column;
    border-radius: 34px;
    align-items: center;
-   box-shadow: 0px 0px 10px var(--font-02);
+   box-shadow: 0px 0px 30px -5px #3a3a3a;
    top: 50%;
    left: 50%;
-   translate: -50% -70%;
+   transform: translate(-50%, -50%);
    text-align: center;
    gap: 10px;
+   z-index: 7;
 }
 
 .btn-cancelar-pop-up-deletar{
@@ -165,6 +180,7 @@ input[type="file"]{
     right: 0.5rem;
     top: 0.5rem;
     background: none;
+    outline:none;
 }
 .btn-cancelar-pop-up-deletar:hover{
     cursor: pointer;
@@ -199,5 +215,8 @@ input[type="file"]{
         flex-direction: column;
         margin: 1.5rem;
         align-items: center;
+    }
+    .pop-up-deletar div{
+        width:80%;
     }
 }

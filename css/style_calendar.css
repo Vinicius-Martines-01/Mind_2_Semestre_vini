@@ -73,7 +73,7 @@
 }
 .dia{
     text-align: center;
-    font-weight: bold;
+    font-weight: 400;
     max-height: inherit;
     border-radius: 5px;
     background-color: #fafafa;
@@ -82,12 +82,6 @@
     transform: none;
     box-shadow: none;
     transition: transform 0.1s;
-}
-.dia:hover{
-    background-color: white;
-    cursor: pointer;
-    transform: translateY(-1px) scale(1);
-    box-shadow: -1px 1px rgb(3, 70, 35);
 }
 .dia-hoje{
     background-color: #F8A764;
@@ -117,4 +111,13 @@
     cursor: not-allowed;
     transform: translateY(-1px) scale(1);
     box-shadow: -1px 1px rgb(70, 3, 20);
+}
+
+@media(max-width:450px){
+    .calendar{
+        margin:20px 10px;
+    }
+    .dia, .dia-cabecalho, .dia-invalido{
+        font-size:clamp(.8rem, 2vw, 1rem);
+    }
 }

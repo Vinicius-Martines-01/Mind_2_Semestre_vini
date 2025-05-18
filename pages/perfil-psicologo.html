@@ -57,22 +57,28 @@
                 <div class="foto-perfil">
                     <img id="perfilFoto" src="/img/cliente_ex.png">
                 </div>
-                <h2 id="perfilNome">Nome Sobrenome</h2>
-                <p id="perfilIdade">Idade:  </p>
-                <p id="perfilLocal">Local:  </p>
-                <p id="perfilCRP">CRP:</p>
-                <div class="contato">
-                    <button type="button" class="perfil-btn" onclick="copyNumber()"><img src="../img/call_icon.svg" alt="telefone">
-                    </button>   
-                    <span id="cell-n">+55 11 9000-0000</span>
-                </div>
-                <br>
-                <div class="contato">
-                    <button type="button" class="perfil-btn"><img src="../img/mail_icon.svg" alt="email"></button>
-                    <span id="email-n">snoopy@gmail.com</span>
+                <div>
+                    <h3 id="perfilNome">Nome Sobrenome</h3>
+                    <p id="perfilIdade">Idade:  </p>
+                    <p id="perfilLocal">Local:  </p>
+                    <p id="perfilCRP">CRP:</p>
                 </div>
             </div>
-            <button class="configuracao"><a href="./configuracoes.html">Configurações</a></button>
+            <div class="card-perfil-settings">
+                <div>
+                    <div class="contato">
+                        <button type="button" class="perfil-btn" onclick="copyNumber()"><img src="../img/call_icon.svg" alt="telefone">
+                        </button>
+                        <span id="cell-n">+55 11 9000-0000</span>
+                    </div>
+                    <br>
+                    <div class="contato">
+                        <button type="button" class="perfil-btn"><img src="../img/mail_icon.svg" alt="email"></button>
+                        <span id="email-n">snoopy@gmail.com</span>
+                    </div>
+                </div>
+                <button class="configuracao"><a href="./configuracoes.html">Configurações</a></button>
+            </div>
         </div>
         
         <div class="container-perfil-row-2">
@@ -122,20 +128,23 @@
         <div class="card-notif-container">
             <h1 class="notif-titulo">Notificações</h1>
             <div class="notificacoes">
-                <div class="card-notif" id="notifSide">
-                    <h3>Sessão do dia 25/10 <br>começa ás 18:00</h3>
-                    <a href="stream-terapia.html">
-                        <button class="card-notif-btn" onclick="setTerapia(1)">Entrar</button>
-                    </a>
-                </div>
-                <div class="card-agendamento" id="agendamento">
-                    <div class="img-h3">
-                        <img src="../img/sininho_icon.png" alt="" class="img-sininho">
-                        <h3>Solicitação de agendamento: 11/10/2024</h3>
+                <div>
+                    <div class="card-notif-session" id="notifSide">
+                        <p>Sessão do dia 25/10 <br>começa ás 18:00</p>
+                        <a href="stream-terapia.html">
+                            <button class="card-notif-btn" onclick="setTerapia(1)">Entrar</button>
+                        </a>
                     </div>
-                    <a href="stream-terapia.html">
-                        <button class="card-notif-btn">Confirmar</button>
-                    </a>
+                </div>
+                <div>
+                    <div class="card-notif-session agendamento" id="agendamento">
+                        <div class="bell">
+                            <p>Solicitação de agendamento: 11/10/2024</p>
+                        </div>
+                        <a href="stream-terapia.html">
+                            <button class="card-notif-btn">Confirmar</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
