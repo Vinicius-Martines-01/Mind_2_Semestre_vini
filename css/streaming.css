@@ -131,14 +131,16 @@
 #img-psi{
     width: 100%;
     height: 29rem;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
     border: 1px solid black;
+    background-color: #fafafa;
 }
 #img-paciente{
     width: 80%;
     height: 12rem;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
     border: 1px solid black;
+    background-color: #fafafa;
 }
