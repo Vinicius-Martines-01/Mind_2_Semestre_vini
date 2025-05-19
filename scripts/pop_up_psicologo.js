@@ -40,13 +40,13 @@ especialidades.forEach(esp => {
 
 
     // Mostrar o popup
-    document.querySelector('.container-pop-up-agendarConsulta').style.display = 'flex';
+    document.querySelector('.container-pop').style.display = 'flex';
   });
 });
 
 // Botão para fechar popup
 document.getElementById('pop-up-fechar').addEventListener('click', function () {
-  document.querySelector('.container-pop-up-agendarConsulta').style.display = 'none';
+  document.querySelector('.container-pop').style.display = 'none';
 });
 
 

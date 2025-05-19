@@ -223,59 +223,61 @@
 
 
         <!-- pop-up-psicologo------------------------------------------------ -->
-         <div class="container-pop-up-agendarConsulta" style="display: none;">
-            <div class="container-imagem-info">
-                <div class="container-imagem">
-                    <img src="" alt="" id="pop-up-img">
-                </div>
-                <div class="infos-pop-up">
-                    <div class="container-info">
-                        <h1 id="pop-up-name"></h1>
-                        <span id="pop-up-idade"></span>
-                        <span id="pop-up-local"></span>
+        <div class="container-pop" style="display: none;">
+            <div class="container-pop-up-agendarConsulta" >
+                <div class="container-imagem-info">
+                    <div class="container-imagem">
+                        <img src="" alt="" id="pop-up-img">
                     </div>
-                    <div class="container-btn-fechar">
-                        <button id="pop-up-fechar"><img src="/img/cancel.png" class="pop-up-img-fechar"></button>
+                    <div class="infos-pop-up">
+                        <div class="container-info">
+                            <h1 id="pop-up-name"></h1>
+                            <span id="pop-up-idade"></span>
+                            <span id="pop-up-local"></span>
+                        </div>
+                        <div class="container-btn-fechar">
+                            <button id="pop-up-fechar"><img src="/img/cancel.png" class="pop-up-img-fechar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-sobre-mim">
+                    <span>Sobre mim:</span>
+                    <span  type="text" id="pop-up-sobre-mim"></span>
+                </div>
+                <div class="container-abordagens">
+                    <div class="container-especialidades">
+                        <span>Abordagens:</span>
+                        <ul id="pop-up-especialidades"></ul>
+                    </div>
+                </div>
+                <div class="container-consultas">
+                    <div class="container-mes">
+                        <button id="prev"><img src="../img/seta-filtro.png" alt="" class="seta-esquerda"></button>
+                        <h1 id="mesAtual"></h1>
+                        <button id="next"><img src="../img/seta-filtro.png" alt="" class="seta-direita"></button>
+                    </div>
+                    <div class="container-card-horarios">
+                    <div class="card-horarios">
+                        <input type="checkbox" class="checkbox-horarios">
+                        <span id="span-dia">Segunda-feira</span>
+                        <span id="span-hr1">09:00</span>
+                        <span id="span-hr2">09:00</span>
+                    </div>
+                    <div class="card-horarios">
+                        <input type="checkbox" class="checkbox-horarios">
+                        <span id="span-dia">Terça-feira</span>
+                        <span id="span-hr1">10:00</span>
+                        <span id="span-hr2">10:40</span>
+                    </div>
+                    </div>
+                    <div class="container-agendar">
+                        <span class="tempo-consulta">40 min</span>
+                        <span>Duração da Sessão</span>
+                        <button class="btn-agendar">Agendar</button>
                     </div>
                 </div>
             </div>
-            <div class="container-sobre-mim">
-                <span>Sobre mim:</span>
-                <span  type="text" id="pop-up-sobre-mim"></span>
-            </div>
-            <div class="container-abordagens">
-                <div class="container-especialidades">
-                    <span>Abordagens:</span>
-                    <ul id="pop-up-especialidades"></ul>
-                </div>
-            </div>
-            <div class="container-consultas">
-                <div class="container-mes">
-                    <button id="prev"><img src="../img/seta-filtro.png" alt="" class="seta-esquerda"></button>
-                    <h1 id="mesAtual"></h1>
-                    <button id="next"><img src="../img/seta-filtro.png" alt="" class="seta-direita"></button>
-                </div>
-                <div class="container-card-horarios">
-                <div class="card-horarios">
-                    <input type="checkbox" class="checkbox-horarios">
-                    <span id="span-dia">Segunda-feira</span>
-                    <span id="span-hr1">09:00</span>
-                    <span id="span-hr2">09:00</span>
-                </div>
-                <div class="card-horarios">
-                    <input type="checkbox" class="checkbox-horarios">
-                    <span id="span-dia">Terça-feira</span>
-                    <span id="span-hr1">10:00</span>
-                    <span id="span-hr2">10:40</span>
-                </div>
-                </div>
-                <div class="container-agendar">
-                    <span class="tempo-consulta">40 min</span>
-                    <span>Duração da Sessão</span>
-                    <button class="btn-agendar">Agendar</button>
-                </div>
-            </div>
-
+        </div>
     </section>
     
     <footer id="mainFooter">
