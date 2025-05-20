@@ -3,7 +3,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 class Paciente extends Sequelize.Model {}
 
-// NOME / EMAIL / SENHA / DT_NASCIMENTO / GENERO / TELEFONE / ENDEREÇO / IMAGEM DE PERFIL
+// NOME / EMAIL / SENHA / DT_NASCIMENTO / GENERO / TELEFONE / ENDEREÇO / IMAGEM DE PERFIL / SOBRE MIM / MEDICAMENTOS / PREFERENCIAS
 Paciente.init({
   login: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false },
@@ -27,7 +27,10 @@ Paciente.init({
   genero: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   telefone: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   endereco: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
-  img_perfil: { type: DataTypes.STRING, allowNull: true, defaultValue: '' }
+  img_perfil: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
+  sobre_mim: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} }, // máximo 510 caracteres
+  medicamentos: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} }, // máximo 510 caracteres
+  preferencias: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} } // máximo 510 caracteres
 }, {
   sequelize,
   modelName: 'Pacientes',

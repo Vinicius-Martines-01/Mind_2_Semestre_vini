@@ -1,14 +1,7 @@
 PORT = 8080 // servidor
+const textosH6 = ["Sobre mim", "Medicamento", "Preferências"] // para modificar o nome dos H6
+const textosQtdMax = [1000, 1000, 1000] // para modificar a quantidade maxima de characters
 
-const btn_imagePreview = document.querySelector("#file-image")
-btn_imagePreview.addEventListener('change', (event) => {
-    const hasImage = event.target.files[0]; // Acessando o primeiro arquivo
-    if(hasImage){ // Se tiver imagem, automaticamente será true
-        const imagePreview = document.querySelector("#imagePreview")
-        const imageURL = URL.createObjectURL(hasImage); // Cria uma URL para a imagem que esta no arquivo local
-        imagePreview.src = imageURL;
-    }
-})
 
 // pop-up-deletar----------------------------------
 
@@ -23,7 +16,43 @@ fechar_pop_up.addEventListener("click", () => {
     pop_up_deletar.style.display = "none";
 })
 
+// Testa o numero de caracteres com Event Listeners
+const sobre_mim_input = document.getElementById('sobreMimEdit');
+const medicamento_input = document.getElementById('medicamentosEdit');
+const preferencias_input = document.getElementById('preferenciasEdit');
 
+sobre_mim_input.addEventListener('input', () => {
+  const qtd = sobre_mim_input.value.length;
+  const txt = document.getElementById('sobreMim');
+
+  if (qtd > textosQtdMax[0]){
+    txt.innerHTML = `${textosH6[0]} <span style="color: red; padding-left:5px">*Limite de 1000 caracteres antigido</span>`;
+  } else {
+    txt.innerHTML = textosH6[0]
+  }
+})
+
+medicamento_input.addEventListener('input', () => {
+  const qtd = medicamento_input.value.length;
+  const txt = document.getElementById('Medicamento');
+
+  if (qtd > textosQtdMax[1]){
+    txt.innerHTML = `${textosH6[1]} <span style="color: red; padding-left:5px">*Limite de 1000 caracteres antigido</span>`;
+  } else {
+    txt.innerHTML = textosH6[1]
+  }
+})
+
+preferencias_input.addEventListener('input', () => {
+  const qtd = preferencias_input.value.length;
+  const txt = document.getElementById('Preferencias');
+
+  if (qtd > textosQtdMax[2]){
+    txt.innerHTML = `${textosH6[2]} <span style="color: red; padding-left:5px">*Limite de 1000 caracteres antigido</span>`;
+  } else {
+    txt.innerHTML = textosH6[2]
+  }
+})
 
 // DB ----------------------------------
 
@@ -41,7 +70,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         if (response.ok) {
             // devolve o nome da Imagem
-            document.getElementById('imagePreview').src = '../server/img/user/perfil_' + usuario.img_perfil; 
+            document.getElementById('imagePreview').src = '../server/img/user/' + usuario.img_perfil; 
             // devolve o nome e o email
             document.getElementById('nomeEdit').value = dados_do_usuario.nome;
             document.getElementById('sobrenomeEdit').value = dados_do_usuario.sobrenome;
@@ -54,6 +83,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             document.getElementById('localEdit').value = dados_do_usuario.endereco;
             document.getElementById('generoEdit').value = dados_do_usuario.genero;
+
+            document.getElementById('sobreMimEdit').value = dados_do_usuario.sobre_mim;
+            document.getElementById('medicamentosEdit').value = dados_do_usuario.medicamentos;
+            document.getElementById('preferenciasEdit').value = dados_do_usuario.preferencias;
 
             // para converter YYYY/MM/DD do banco de dados para DD/MM/YYYY 
             const [ano, mes, dia] = dados_do_usuario.dt_nascimento.split('-');
@@ -87,12 +120,15 @@ document.getElementById('btnAtualizarPerfil').addEventListener('click', async ()
   const email = document.getElementById('emailEdit').value;
   const senha = document.getElementById('senhaEdit').value;
 
+  const sobre_mim = document.getElementById('sobreMimEdit').value;
+  const medicamentos = document.getElementById('medicamentosEdit').value;
+  const preferencias = document.getElementById('preferenciasEdit').value;
 
   try {
     const response = await fetch(`http://localhost:${PORT}/api/paciente/atualizar/${usuario.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome, sobrenome, dt_nascimento, telefone, endereco, genero, login, email, senha })
+      body: JSON.stringify({ nome, sobrenome, dt_nascimento, telefone, endereco, genero, login, email, senha, sobre_mim, medicamentos, preferencias})
     });
     // se ok: fazer login denovo
     if (response.ok) {
@@ -158,6 +194,39 @@ document.getElementById('btnADeletarPerfil').addEventListener('click', async () 
 
 
 // trocar Imagem
-document.getElementById('file-image').addEventListener('change', async (e) => {
-  console.log('one')
+const imgPerfil = document.getElementById('file-image')
+
+imgPerfil.addEventListener('change', async () => {
+const file = imgPerfil.files[0];
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append('imagem', file);
+
+  // Cabeçalho IMPORTANTE
+  const usuario = JSON.parse(sessionStorage.getItem("mind_user"));
+  const pasta = 'user'
+  const prefixo = 'perfil'
+
+  try {
+    const response = await fetch(`http://localhost:${PORT}/api/img/${pasta}/${usuario.id}`, {
+      method: 'POST',
+      headers: {'prefixo': prefixo}, // prefixo para o tipo de imagem
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      
+      usuario.img_perfil = imgPerfil.src = data.arquivo
+
+      sessionStorage.setItem("mind_user", JSON.stringify(usuario))
+
+
+    } else {
+      alert('Erro: ' + data.erro);
+    }
+  } catch (error) {
+    alert('Erro no upload: ' + error.message);
+  }
 });

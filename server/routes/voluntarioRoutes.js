@@ -1,15 +1,13 @@
 import express from 'express';
-import pacienteController from '../controllers/PacienteController.js';
+import psicologoController from '../controllers/VoluntarioController.js';
 
 const router = express.Router();
 
-// Definindo as rotas
-
 // put
-router.put('/paciente/', async (req, res) => {
+router.put('/voluntario/', async (req, res) => {
   const { nome, email, senha } = req.body;
   try {
-    await pacienteController.cadastrar(nome, email, senha);
+    await psicologoController.cadastrar(nome, email, senha);
     res.status(201).json({ mensagem: 'Usuário criado com sucesso!' });
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao criar usuário', detalhe: err.message });
@@ -17,9 +15,9 @@ router.put('/paciente/', async (req, res) => {
 });
 
 // lista os pacientes
-router.get('/paciente/', async (req, res) => {
+router.get('/voluntario/', async (req, res) => {
   try {
-    const usuarios = await pacienteController.listarTodos();
+    const usuarios = await psicologoController.listarTodos();
     res.json(usuarios);
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao listar usuários', detalhe: err.message });
@@ -27,10 +25,10 @@ router.get('/paciente/', async (req, res) => {
 });
 
 // busca por email
-router.get('/paciente/email/:email', async (req, res) => {
+router.get('/voluntario/email/:email', async (req, res) => {
   const { email } = req.params;
   try {
-    const usuario = await pacienteController.buscarPorEmail(email);
+    const usuario = await psicologoController.buscarPorEmail(email);
     if (usuario) {
       res.json(usuario);
     } else {
@@ -41,10 +39,10 @@ router.get('/paciente/email/:email', async (req, res) => {
   }
 });
 // busca pelo nome
-router.get('/paciente/nome/:nome', async (req, res) => {
+router.get('/voluntario/nome/:nome', async (req, res) => {
   const { nome } = req.params;
   try {
-    const usuario = await pacienteController.buscarPorNome(nome);
+    const usuario = await psicologoController.buscarPorNome(nome);
     if (usuario) {
       res.json(usuario);
     } else {
@@ -56,10 +54,10 @@ router.get('/paciente/nome/:nome', async (req, res) => {
 });
 
 // faz  o login
-router.post('/paciente/login', async (req, res) => {
+router.post('/voluntario/login', async (req, res) => {
   const { login, senha } = req.body;
   try {
-    const usuario = await pacienteController.buscarPorLogin(login);
+    const usuario = await psicologoController.buscarPorLogin(login);
 
     if (!usuario) {
       return res.status(401).json({ error: 'Usuário não encontrado' });
@@ -86,11 +84,11 @@ router.post('/paciente/login', async (req, res) => {
 });
 
 // Pegar usuario por id
-router.get('/paciente/:id', async (req, res) => {
+router.get('/voluntario/:id', async (req, res) => {
   const { id } = req.params;
   
   try {
-    const usuario = await pacienteController.buscarPorId(id);
+    const usuario = await psicologoController.buscarPorId(id);
 
     if (usuario) {
       res.json(usuario);
@@ -103,7 +101,7 @@ router.get('/paciente/:id', async (req, res) => {
 });
 
 // Atualizar usuário pelo id
-router.put('/paciente/atualizar/:id', async (req, res) => {
+router.put('/voluntario/atualizar/:id', async (req, res) => {
   const { id } = req.params;
   const { nome, sobrenome, dt_nascimento, telefone, endereco, genero, login, email, senha } = req.body;
 
@@ -131,7 +129,7 @@ router.put('/paciente/atualizar/:id', async (req, res) => {
 
 
   try {
-    await pacienteController.atualizar(id, camposAtualizados);
+    await psicologoController.atualizar(id, camposAtualizados);
     res.json({ mensagem: 'Usuário atualizado com sucesso!' });
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao atualizar usuário', detalhe: err.message });
@@ -140,11 +138,11 @@ router.put('/paciente/atualizar/:id', async (req, res) => {
 });
  
 // Deletar por ID
-router.delete('/paciente/deletar/:id', async (req, res) => {
+router.delete('/voluntario/deletar/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
-    await pacienteController.deletar(id);
+    await psicologoController.deletar(id);
     res.json({ mensagem: 'Usuário deletado com sucesso!' });
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao deletar usuário', detalhe: err.message });
