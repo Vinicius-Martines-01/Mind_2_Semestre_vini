@@ -50,6 +50,7 @@ async function dropDatabase() {
 
     // Executa o Query
     await sequelize.query(dropQuery);
+    
     console.log(`Successfully dropped database: ${databaseName}`);
   } catch (error) {
     console.error('Error dropping database:', error);

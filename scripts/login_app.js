@@ -124,8 +124,7 @@ function changePerfilData(){
     usuario = JSON.parse(sessionStorage.getItem("mind_user"))
     console.log(usuario) // check if user is log
     
-    const defaultImage = '../server/img/user/perfil_.png'
-    
+
     if (usuario === null) {
         photo.src = defaultImage
       } else {
@@ -134,9 +133,9 @@ function changePerfilData(){
         idade.innerHTML = `Idade: ${usuario.idade}`
 
         if (usuario.img_perfil === ''){
-            photo.src = defaultImage
+            photo.src =  '../server/img/user/perfil-null.png'
         } else {
-            photo.src = '../server/img/user/perfil_' + usuario.img_perfil; 
+            photo.src = '../server/img/user/' + usuario.img_perfil; 
         }
       }
 

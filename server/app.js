@@ -1,10 +1,12 @@
 import express, { json } from 'express';
 import cors from 'cors';
-import userRoutes from './routes/userRoutes.js';
+import pacienteRoutes from './routes/PacienteRoutes.js';
+import psicologoRoutes from './routes/PsicologoRoutes.js';
+import voluntarioRoutes from './routes/voluntarioRoutes.js';
 
 const app = express();
 
-// Configuração do CORS // PS: Veja qual porta o live -server está enviando, se ela não estiver aqui, ADICIONE
+// Configuração do CORS // PS: Veja qual porta o live-server está enviando, se ela não estiver aqui, ADICIONE
 const origensPermitidas = [
   'http://127.0.0.1:5501',
   'http://localhost:5501',
@@ -24,6 +26,10 @@ app.use(cors({
 }));
 
 app.use(json());
-app.use('/api', userRoutes); // Definindo as rotas
+app.use('/api', pacienteRoutes); // rota do paciente
+app.use('/api', psicologoRoutes); // rota do psicologo
+app.use('/api', voluntarioRoutes); // rota do voluntario
+
+// app.use('/img', express.static(path.join(__dirname, 'server/img'))); // rota da pasta de imagens
 
 export default app;
