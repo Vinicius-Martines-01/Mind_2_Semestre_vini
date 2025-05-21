@@ -5,6 +5,7 @@ class Voluntario extends Sequelize.Model {}
 
 // NOME / EMAIL / SENHA / AREA INTERESSE / DISPONIBILIDADE / TELEFONE
 Voluntario.init({ 
+  ID_Voluntario: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   nome: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false, unique: true, validate: { isEmail: true } },
   senha: {type: DataTypes.STRING, allowNull: false },
