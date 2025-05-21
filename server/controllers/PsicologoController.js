@@ -1,4 +1,7 @@
 import Psicologo from '../db/models/Psicologo.js';
+import Consulta from '../db/models/Consulta.js';
+import Pagamento from '../db/models/Pagamento.js';
+
 
 class PsicologoController {
   async cadastrar(dados) {

@@ -1,6 +1,6 @@
 PORT = 8080 // servidor
 const textosH6 = ["Sobre mim", "Medicamento", "Preferências"] // para modificar o nome dos H6
-const textosQtdMax = [1000, 1000, 1000] // para modificar a quantidade maxima de characters
+const textosQtdMax = [510, 510, 510] // para modificar a quantidade maxima de characters
 
 
 // pop-up-deletar----------------------------------

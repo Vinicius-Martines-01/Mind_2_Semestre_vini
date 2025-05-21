@@ -70,7 +70,7 @@ router.post('/paciente/login', async (req, res) => {
 
     res.status(200).json({
       user: {
-        id: usuario.id,
+        id: usuario.ID_Paciente,
         login: usuario.login,
         email: usuario.email,
         nome: usuario.nome,

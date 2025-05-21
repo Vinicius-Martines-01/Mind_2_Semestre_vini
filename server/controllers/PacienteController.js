@@ -70,7 +70,7 @@ class PacienteController {
   async atualizar(paciente_id, camposAtualizados) {
     if (Object.keys(camposAtualizados).length > 0) {
       await Paciente.update(camposAtualizados, {
-        where: { id: paciente_id }
+        where: { ID_Paciente: paciente_id }
     });
     console.log('Usuário atualizado.');
     }
@@ -78,13 +78,13 @@ class PacienteController {
 
   // buscar por
   async buscarPorId(paciente_id) {
-    const paciente = await Paciente.findOne({ where: { id: paciente_id } });
+    const paciente = await Paciente.findOne({ where: { ID_Paciente: paciente_id } });
     return paciente ? paciente.toJSON() : null;
   }
 
   // deletar por id
   async deletar(paciente_id) {
-    await Paciente.destroy({ where: { id: paciente_id } });
+    await Paciente.destroy({ where: { ID_Paciente: paciente_id } });
     console.log('Usuário deletado.');
   }
 

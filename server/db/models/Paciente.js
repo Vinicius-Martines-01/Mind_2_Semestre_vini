@@ -5,6 +5,7 @@ class Paciente extends Sequelize.Model {}
 
 // NOME / EMAIL / SENHA / DT_NASCIMENTO / GENERO / TELEFONE / ENDEREÇO / IMAGEM DE PERFIL / SOBRE MIM / MEDICAMENTOS / PREFERENCIAS
 Paciente.init({
+  ID_Paciente: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   login: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false },
   senha: { type: DataTypes.STRING, allowNull: false },

@@ -1,10 +1,12 @@
 import sequelize from '../database.js';
 import { Sequelize, DataTypes } from 'sequelize';
 
+
 class Psicologo extends Sequelize.Model {}
 
 // NOME / EMAIL / SENHA / CRP / ESPECIALIDADE / TELEFONE / ENDEREÇO
 Psicologo.init({
+  ID_Psicologo: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   nome: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false, unique: true, validate: { isEmail: true } },
   senha: {type: DataTypes.STRING, allowNull: false },
