@@ -10,3 +10,23 @@ export function getPacientes(){
     ]
     return ds
 }
+// Get Psicologos
+export function getPsicologo(){
+    const ds = [ 
+        { id: 1, login: "Robson Souza", password: "2000", email: "robson_souza@gmail.com", crp:'CRP-06/123456', nome:"Robson", sobrenome:"Souza", 
+            genero:"Masculino", dt_nascimento:'1997-04-13', telefone:"(12) 2959-7375", local:"São Paulo", img_perfil:'psi_1.png',
+            especialidade: [1, 2, 4]},
+    ]
+    return ds
+}
+
+export function getEspecialidades(){
+    const ds = [ 
+        {nome: 'Ansiedade'},
+        {nome: 'Casais'},
+        {nome: 'Conflitos familiares'},
+        {nome: 'Dependencia Química'},
+        {nome: 'Insonia'},
+    ]
+    return ds
+}

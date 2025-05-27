@@ -19,6 +19,8 @@
     "paciente": "node server/scripts/createDefaultUsers.js",
     "db:paciente": "node server/scripts/createDefaultUsers.js",
 
+    "psicologo": "node server/scripts/createDefaultPsicologos.js",
+
     "db:drop": "node server/scripts/dropDatabase.js",
     "drop": "node server/scripts/dropDatabase.js",
     "break": "node server/scripts/dropDatabase.js"
