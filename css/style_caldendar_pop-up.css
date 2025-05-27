@@ -57,17 +57,13 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0.25em;
-
-
     list-style: none;
     text-align: center;
-
 }
 
 .calendario ul li{
     font-size: 20px;
     position: relative;
-
 }
 
 #anterior, #proximo{
@@ -79,7 +75,6 @@
     background: transparent;
     cursor: pointer;
     outline: none;
-
 }
 
 #anterior::before, #proximo::before{
@@ -91,7 +86,6 @@
     left: 50%;
     border-style: solid;
     border-radius: 20%;
-
     border-color: white;
     transition: border-color 0.5s;
     border-width: 0.5em 0.5em 0 0;
