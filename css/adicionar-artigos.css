@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
+    font-weight: 500;
 }
 :root{
     --color-01:#F8A764;
@@ -23,8 +24,17 @@ section{
     justify-content: center;
     flex-direction: column;
 }
-section h1{
+h1{
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+h2{
+    font-size: clamp(1rem, 5vw, 1.5rem) !important;
+    width:100%;
+    border-bottom: 2px solid #000;
+}
+h4{
     font-size: 1rem;
+    padding-top:10px;
 }
 .container-section{
     display: flex;
@@ -36,8 +46,9 @@ section h1{
 .container-img{
     height: 250px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin:4rem;
     margin-left:0px;
     padding:10px;
@@ -46,32 +57,61 @@ section h1{
 .imgEdit{
     width: clamp(150px, 20vw, 180px);
     height: clamp(150px, 20vw, 180px);
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: #29292969;
 }  
+input[type="file"]{
+    display:none;
+}
+/* --------------------------------------- */
 .container-inputs{
     width: 100%;
 }
-
 .container-atualizar{
     margin: 1.5rem 0;
     display: flex;
     justify-content: end;
 }
-input[type="file"]{
-    display:none;
-}
-.container-titulo textarea{
+.container-sobre-mim textarea{
     width: 100%;
+    border-radius: 5px;    
+    height: 100px;
+}
+.container-titulo input{
+    width: 100%;
+    border-radius: 5px;
+    padding:5px;
+}
+.container-artigos{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.container-artigos div.btns-modify{
+    display: flex;
+    gap:10px;
+    margin-left:5px;
+    width:100%;
+    border-bottom:1px solid #999999;
+    padding-bottom:10px;
 }
 .container-btns{
     width: 100%;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
 }
-/* --------------Artigos publicados------------------------------ */
+.container-
+.container-perfil{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.container-sobre-mim span{
+    opacity: 60%;
+    font-size:.9rem;
+}
+/* Artigos publicados------------------------------ */
 .artigo-container{
     margin-top: 1rem;
     display:flex;
@@ -87,6 +127,7 @@ input[type="file"]{
     width:clamp(100px, 20vw, 150px);
     height: clamp(100px, 20vw, 150px);
     border-radius: 10px;
+    object-fit: cover;
 }
 .artigo-texto > div{
     display: flex;
@@ -170,41 +211,6 @@ input[type="file"]{
 }
 .btns:hover{
     background-color: var(--color-04);
-}
-
-/* container-perfil------------------------------- */
-
-.container-perfil{
-    display: flex;
-    flex-direction: column;
-}
-.container-perfil h1{
-    font-size: 2rem;
-    border-bottom: 2px solid black;
-    margin-top: 2rem;
-    padding-bottom: 5px;
-}
-.container-sobre-mim, .container-medicamento, .container-preferencias, .container-especializacoes, .container-horario-atendimento{
-    display: flex;
-    flex-direction: column;
-    padding-top: 2rem;
-}
-.container-sobre-mim span, .container-medicamento span, .container-preferencias span,  .container-especializacoes span, .container-horario-atendimento span{
-    opacity: 50%;
-    font-size:.85rem;
-}
-
-.container-sobre-mim textarea, .container-medicamento textarea, .container-preferencias textarea{
-    height: 100px;
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
-}
-.container-sobre-mim textarea:focus, .container-medicamento textarea:focus, .container-preferencias textarea:focus, .container-sobre-mim textarea:focus, .container-agendamento>:focus{
-    outline: 0;
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 /* Responsividade -------------------------- */
 @media(max-width:800px){
