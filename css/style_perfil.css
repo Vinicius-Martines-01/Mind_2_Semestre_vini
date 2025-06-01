@@ -41,6 +41,7 @@ section.section{
     display:flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items:center;
     height:100%;
     color:var(--font-01)
 }
@@ -49,7 +50,7 @@ section.section{
     height: clamp(150px, 20vw, 180px);
     border-radius: 50%;
 }
-#cell-n, .configuracao a {
+#cell-n, .setting a {
     font-size:clamp(0.9rem, 2vw, 1rem);
 }
 #perfilNome{
@@ -70,21 +71,29 @@ section.section{
 .contato button:hover{
     background-color: var(--color-05);
 }
-.configuracao{
+.settings{
+    flex-direction: column;
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+.setting{
     border:none;
     border-radius: 10px;
     background-color: var(--color-04);
     padding:8px 20px;
     margin:10px;
+    width:100%;
 }
-.configuracao:hover{
+.setting:hover{
     background-color: var(--color-05);
 }
-.configuracao a{
+.setting a{
     color:var(--font-01);
     text-decoration: none;
+    font-size: .9rem;
 }
-.configuracao a:hover{
+.setting a:hover{
     color:var(--font-01);
     text-decoration: none;
 }
@@ -189,7 +198,7 @@ div.card-info-container h3{
         flex-wrap: wrap;
         align-items: flex-end ;
     }
-    .foto-perfil img, .configuracao{
+    .foto-perfil img, .setting{
         margin:0;
     }
     .info{
