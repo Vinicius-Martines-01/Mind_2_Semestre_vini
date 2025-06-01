@@ -61,6 +61,7 @@
     width:clamp(100px, 20vw, 150px);
     height: clamp(100px, 20vw, 150px);
     border-radius: 10px;
+    object-fit: cover;
 }
 .artigo-texto > div{
     display: flex;
