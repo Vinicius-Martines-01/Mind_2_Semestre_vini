@@ -1,13 +1,16 @@
 import mysql from 'mysql2';
 import { Sequelize } from 'sequelize';
 
+// SENHA DO SQL
+const senha = 'admin' 
+
 // Criação do banco de dados de forma assíncrona
 export async function createDatabase() {
   return new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: 'gris3@',
+      password: senha,
     });
 
     connection.query('CREATE DATABASE IF NOT EXISTS mind_plus_ultra', (err, results) => {
@@ -22,7 +25,7 @@ export async function createDatabase() {
 }
 
 // Configuração do Sequelize para se conectar ao banco de dados
-const sequelize = new Sequelize('mind_plus_ultra', 'root', 'gris3@', {
+const sequelize = new Sequelize('mind_plus_ultra', 'root', senha, {
   host: 'localhost',
   dialect: 'mysql',
 });

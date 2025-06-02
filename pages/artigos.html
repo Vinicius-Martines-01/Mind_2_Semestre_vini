@@ -11,7 +11,7 @@
     
     <script type="module" src="/scripts/login_app.js" defer></script>
     <script type="text/javascript" src="/scripts/utilites.js" defer></script>
-    <script type="text/javascript" src="/scripts/artigos.js" defer></script>
+    <script type="text/javascript" src="../server/scripts/createDefaultArtigos.js" defer></script>
     <script type="text/javascript" src="/scripts/nav.js" defer></script>
 
     <title>Artigos</title>
@@ -42,29 +42,8 @@
             <h1>Artigos de Saúde Mental</h1>
             <h2>Rápidas dicas e recomendações sobre saúde mental e segurança pessoal para o seu dia a dia</h2>
             <hr>
-            <div class="artigos">
-                <article class="artigo-container">
-                    <img src="../img/quebra-cab.png" alt="imagem de artigo">
-                    <div class="artigo-texto">
-                        <div class="visible">
-                            <h3>Importância da consulta<br> psicologica</h3>
-                            <span>@LuigiAmaral</span>
-                            <button type="button" class="artigo-btn" onclick="getArtigo(this, 0)">Ver</button>
-                        </div>
-                        <p></p>
-                    </div>
-                </article>
-                <article class="artigo-container">
-                    <img src="../img/tela_celular.png" alt="imagem de artigo">
-                    <div class="artigo-texto">
-                        <div class="visible">
-                            <h3>Números de emergência para segurança</h3>
-                            <span>@LuigiAmaral</span>
-                            <button type="button" class="artigo-btn" onclick="getArtigo(this, 1)">Ver</button>
-                        </div>
-                        <p></p>
-                    </div>
-                </article>
+            <div id="local_dos_artigos" class="artigos">
+                <!-- Artigos serão inseridos aqui -->
             </div>
         </div>
     </section>
@@ -88,5 +67,9 @@
             });
         });
     </script>
+
+    
+    <script type="text/javascript" src="/scripts/artigos.js"></script>
+
 </body>
 </html>

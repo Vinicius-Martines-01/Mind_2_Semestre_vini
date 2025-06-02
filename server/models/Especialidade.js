@@ -1,4 +1,4 @@
-import sequelize from '../database.js';
+import sequelize from '../db/database.js';
 import { Sequelize, DataTypes } from 'sequelize';
 
 class Especialidade extends Sequelize.Model {}

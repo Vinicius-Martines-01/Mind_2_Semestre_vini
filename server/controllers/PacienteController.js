@@ -1,4 +1,4 @@
-import Paciente from '../db/models/Paciente.js'; 
+import Paciente from '../models/Paciente.js'; 
 import { getPacientes } from '../scripts/userVectors.js';
 
 class PacienteController {

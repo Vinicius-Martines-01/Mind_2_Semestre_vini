@@ -1,4 +1,4 @@
-import Voluntario from '../db/models/Voluntario.js';
+import Voluntario from '../models/Voluntario.js';
 
 class VoluntarioController {
   async cadastrar(dados) {
