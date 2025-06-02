@@ -1,11 +1,11 @@
-import Psicologo from '../db/models/Psicologo.js';
-import Consulta from '../db/models/Consulta.js';
-import Pagamento from '../db/models/Pagamento.js';
-import Especialidade from '../db/models/Especialidade.js';
-import PsicologoEspecialidade from '../db/models/PsicologoEspecialidade.js';
+import Psicologo from '../models/Psicologo.js';
+import Consulta from '../models/Consulta.js';
+import Pagamento from '../models/Pagamento.js';
+import Especialidade from '../models/Especialidade.js';
+import PsicologoEspecialidade from '../models/PsicologoEspecialidade.js';
+import Artigo from '../models/Artigo.js';
 
-import { getEspecialidades, getPsicologo } from '../scripts/userVectors.js';
-
+import { getEspecialidades, getPsicologo, getArtigos } from '../scripts/userVectors.js';
 
 // Definindo o relacionamento
 Psicologo.belongsToMany(Especialidade, {
@@ -78,6 +78,47 @@ class PsicologoController {
       console.error('Erro ao criar Psicologo de exemplo:', err);
     }
   }
+
+  async criarArtigosDefault() {
+    const ds = getArtigos() 
+
+    try {
+      // deleta os Artigos antigos caso existam
+      await Artigo.destroy({ where: {}, truncate: false });
+  
+      for (const item of ds) {
+        const novoArtigo = await Artigo.create({
+          ID_Psicologo: item.id_autor,
+          nome: item.nome,
+          texto: item.artigo,
+          img: item.img,
+          referencia: item.ref,
+        });
+        console.log(`Artigo |${item.nome}| criado`, novoArtigo.toJSON());
+      }
+  
+      console.log('Artigo de exemplo recriados com sucesso!');
+    } catch (err) {
+      console.error('Erro ao criar Artigos de exemplo:', err);
+    }
+  }
+
+  async buscarTodosArtigoPorId(id) {
+    const artigos = await Artigo.findAll({ where: {ID_Psicologo: id } });
+
+
+
+
+    const psicologo = await Psicologo.findOne({ where: {ID_Psicologo: id }, attributes: ['login'] }) // ID do psicologo
+      // Adicionar o endereço a cada artigo
+      const artigosCompleto = artigos.map(artigo => ({
+        ...artigo.toJSON(),
+        autor: psicologo.login
+      }))
+
+    return artigosCompleto
+  }
+
 
   async cadastrar(dados) {
     const novoPsicologo = await Psicologo.create(dados);

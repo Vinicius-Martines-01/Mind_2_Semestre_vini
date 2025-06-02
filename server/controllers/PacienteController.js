@@ -1,4 +1,4 @@
-import Paciente from '../db/models/Paciente.js'; 
+import Paciente from '../models/Paciente.js'; 
 import { getPacientes } from '../scripts/userVectors.js';
 
 class PacienteController {
@@ -39,7 +39,7 @@ class PacienteController {
     try {
       // deleta os pacientes antigos caso existam
       // resolve o problema
-      await Paciente.destroy({ where: {}, truncate: true });
+      await Paciente.destroy({ where: {}, truncate: false });
   
       for (const item of ds) {
         const novoUser = await Paciente.create({

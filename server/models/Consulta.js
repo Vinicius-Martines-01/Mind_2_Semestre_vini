@@ -1,4 +1,4 @@
-import sequelize from '../database.js';
+import sequelize from '../db/database.js';
 import DataTypes  from 'sequelize';
 import Psicologo from './Psicologo.js';
 import Paciente from './Paciente.js';

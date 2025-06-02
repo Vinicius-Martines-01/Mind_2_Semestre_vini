@@ -21,6 +21,9 @@
 
     "psicologo": "node server/scripts/createDefaultPsicologos.js",
 
+    "artigo": "node server/scripts/createDefaultArtigos.js",
+
+
     "db:drop": "node server/scripts/dropDatabase.js",
     "drop": "node server/scripts/dropDatabase.js",
     "break": "node server/scripts/dropDatabase.js"

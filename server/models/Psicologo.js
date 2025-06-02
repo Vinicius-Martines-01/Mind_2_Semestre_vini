@@ -1,14 +1,16 @@
-import sequelize from '../database.js';
+import sequelize from '../db/database.js';
 import { Sequelize, DataTypes } from 'sequelize';
 
-class Paciente extends Sequelize.Model {}
 
-// NOME / EMAIL / SENHA / DT_NASCIMENTO / GENERO / TELEFONE / ENDEREÇO / IMAGEM DE PERFIL / SOBRE MIM / MEDICAMENTOS / PREFERENCIAS
-Paciente.init({
-  ID_Paciente: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+class Psicologo extends Sequelize.Model {}
+
+// NOME / EMAIL / SENHA / CRP / ESPECIALIDADE / TELEFONE / ENDEREÇO
+Psicologo.init({
+  ID_Psicologo: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   login: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false },
   senha: { type: DataTypes.STRING, allowNull: false },
+  crp: { type: DataTypes.STRING(13), allowNull: false, unique: true },
   nome: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   sobrenome: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   dt_nascimento: { type: DataTypes.DATEONLY, allowNull: true, defaultValue: '1999-01-01'},
@@ -29,14 +31,12 @@ Paciente.init({
   telefone: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   endereco: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
   img_perfil: { type: DataTypes.STRING, allowNull: true, defaultValue: '' },
-  sobre_mim: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} }, // máximo 510 caracteres
-  medicamentos: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} }, // máximo 510 caracteres
-  preferencias: { type: DataTypes.TEXT, allowNull: true, validate: { len: [0, 510]} } // máximo 510 caracteres
+
 }, {
-  sequelize,
-  modelName: 'Pacientes',
-  tableName: 'pacientes',
-  timestamps: true,
+sequelize,
+modelName: 'Psicologos',
+tableName: 'psicologos',
+timestamps: true,
 });
 
-export default Paciente;
+export default Psicologo;

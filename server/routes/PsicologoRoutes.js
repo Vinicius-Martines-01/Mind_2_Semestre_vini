@@ -24,6 +24,17 @@ router.get('/psicologo/', async (req, res) => {
   }
 });
 
+// lista os artigos do psicologo
+router.get('/artigo/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const artigos = await psicologoController.buscarTodosArtigoPorId(id);
+    res.json(artigos);
+  } catch (err) {
+    res.status(500).json({ erro: 'Erro ao listar artigos', detalhe: err.message });
+  }
+});
+
 // busca por email
 router.get('/psicologo/email/:email', async (req, res) => {
   const { email } = req.params;
