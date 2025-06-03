@@ -110,7 +110,7 @@ class PsicologoController {
 
 
     const psicologo = await Psicologo.findOne({ where: {ID_Psicologo: id }, attributes: ['login'] }) // ID do psicologo
-      // Adicionar o endereço a cada artigo
+      // Adicionar o autor a cada artigo
       const artigosCompleto = artigos.map(artigo => ({
         ...artigo.toJSON(),
         autor: psicologo.login
