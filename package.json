@@ -26,6 +26,8 @@
 
     "db:drop": "node server/scripts/dropDatabase.js",
     "drop": "node server/scripts/dropDatabase.js",
-    "break": "node server/scripts/dropDatabase.js"
+    "break": "node server/scripts/dropDatabase.js",
+
+    "start": "node server/scripts/createDefaultUsers.js && node server/scripts/createDefaultPsicologos.js && node server/scripts/createDefaultArtigos.js && node server/server.js"
   }
 }
