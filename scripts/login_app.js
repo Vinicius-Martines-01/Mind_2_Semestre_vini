@@ -23,16 +23,19 @@ function doLogin(event){
     // check - Versão Online; ELSE - Versão offline
     if (window.location.hostname.includes("vercel")){
         const usuarios = JSON.parse(localStorage.getItem("usersHere")) // busca os usuarios do vetor
-    
+        let find = false;
         for(let i = 0; i < usuarios.length; i++){
             if((login == usuarios[i].login || login == usuarios[i].email) && senha == usuarios[i].password){
                 let n = JSON.stringify(usuarios[i]);
                 sessionStorage.setItem("mind_user", n)
                 window.location.href =  window.location.href.replace("login.html", "home.html")
-                return
+                find = tr
             }
         }
-        alert("conta não encontrada")
+        if (!find){
+            alert("conta não encontrada")
+        }
+
         
     } else {
         // FAZ O LOGIN ACESSANDO O BANCO DE DADOS
