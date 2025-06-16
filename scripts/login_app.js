@@ -29,7 +29,7 @@ function doLogin(event){
                 let n = JSON.stringify(usuarios[i]);
                 sessionStorage.setItem("mind_user", n)
                 window.location.href =  window.location.href.replace("login.html", "home.html")
-                break
+                return
             }
         }
         alert("conta não encontrada")
