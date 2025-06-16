@@ -126,7 +126,7 @@ function desktopNav(){
       } else {
         // usuario deslogado e fora do login
         navB += ` <div></div><div></div>
-                  <div class="nav-right" onmouseenter="dropNav(this)" onmouseleave="closeNav(this)">
+                  <div class="nav-right" onmouseenter="dropNav(this)">
                       <button type="button" class="nav-btn-login">login</button>
                       <div></div>
                   </div> `
@@ -269,23 +269,36 @@ function desktopNav(){
     }
   
     console.log(this.window.location.href)
-    own.children[1].innerHTML = `<div class=nav-login-drop-wrapper>
+    own.children[1].innerHTML = `<div class=nav-login-drop-wrapper onmouseleave="closeNav(this)">
                                     <div class="nav-login-drop">
                                             <button type="button" onclick="setUserType(0, '${str}')" class="nav-drop-btn">Paciente</button>
                                             <button type="button" onclick="setUserType(1, '${str}')" class="nav-drop-btn">Psicólogo</button>
                                             <button type="button" onclick="setUserType(2, '${str}')" class="nav-drop-btn">Voluntário</button>
 
                                     </div>`
+
   
+
+    
   }
   
   function closeNav(own){
-    document.querySelector('.nav-btn-login').classList.remove('hover-state')
-  
-    own.children[1].innerHTML = ''
+    const drop_nav = document.querySelector('.nav-login-drop-wrapper')
+    console.log(drop_nav)
+
+        document.querySelector('.nav-btn-login').classList.remove('hover-state')
+        console.log('here')
+        drop_nav.innerHTML = ''
+
+
+
+    
+
+
+
+
   }
   
-
 // Muda o footer 
 document.getElementById('mainFooter').innerHTML = `
               <div class="grid-footer">

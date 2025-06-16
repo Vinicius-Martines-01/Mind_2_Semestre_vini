@@ -139,7 +139,7 @@ footer a:hover, footer p:hover {
     font-family: 'poppins';
     font-size: medium;
     font-weight:500;
-    margin: 0.75em;
+    margin: 0.5em;
     margin-top: 0.5em;
     padding: 0.5em;
     width: inherit;
@@ -149,17 +149,18 @@ footer a:hover, footer p:hover {
     outline: none;
     color: white;
     background-color: #1C5841;
-    transform: translateY(5px);
+    transform: translateY(60px);
     transition: background-color 0.5s;
     cursor: pointer;
-    z-index: 111;
+    z-index: 11111;
 
 }
 
 .nav-login-drop-wrapper{
     height: inherit;
+    margin-top: 30px;
     margin: -5%;
-    transform: translateY(-5px);
+    transform: translateY(-60px);
 }
 
 .nav-login-drop a:hover{
