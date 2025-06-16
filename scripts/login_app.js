@@ -32,6 +32,8 @@ function doLogin(event){
                 break
             }
         }
+        alert("conta não encontrada")
+        
     } else {
         // FAZ O LOGIN ACESSANDO O BANCO DE DADOS
         (async () => {
